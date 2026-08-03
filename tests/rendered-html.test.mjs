@@ -31,6 +31,9 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /direto no WhatsApp/);
   assert.match(html, /Agendar pelo WhatsApp/);
   assert.match(html, /Agendar no WhatsApp/);
+  assert.match(html, /O Manoa oferece hospedagem\?/);
+  assert.match(html, /Por que falar com o Manoa/);
+  assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
   assert.match(html, /não oferece hospedagem diretamente/);
   assert.match(html, /Pedir indicações/);
   assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);

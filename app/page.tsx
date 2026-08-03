@@ -10,7 +10,7 @@ const bookingSteps = [
 const faqs = [
   {
     question: "Como faço para agendar um passeio?",
-    answer: "Chame a Manoa pelo WhatsApp e informe a data, a quantidade de pessoas e se procura passeio compartilhado ou privativo.",
+    answer: "Chame o Manoa pelo WhatsApp e informe a data, a quantidade de pessoas e se procura passeio compartilhado ou privativo.",
   },
   {
     question: "Os valores aparecem no site?",
@@ -21,8 +21,8 @@ const faqs = [
     answer: "Sim. Pelo WhatsApp, você pode alinhar as possibilidades de rota e escolher uma experiência adequada ao seu grupo.",
   },
   {
-    question: "A Manoa oferece hospedagem?",
-    answer: "Não diretamente. A Manoa tem parceiros e pode dar dicas de lugares para ficar em Angra e na região.",
+    question: "O Manoa oferece hospedagem?",
+    answer: "Não diretamente. O Manoa tem parceiros e pode dar dicas de lugares para ficar em Angra e na região.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Home() {
               Valores e agendamento <span aria-hidden="true">↗</span>
             </a>
           </div>
-          <div className="hero-proof" aria-label="Diferenciais da Manoa">
+          <div className="hero-proof" aria-label="Diferenciais do Manoa">
             <span>Atendimento local</span><i aria-hidden="true" />
             <span>Rota conversada</span><i aria-hidden="true" />
             <span>Contato direto</span>
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sales-strip" aria-label="Serviços da Manoa">
+      <section className="sales-strip" aria-label="Serviços do Manoa">
         <a href="#passeio-compartilhado"><span>01</span><strong>Passeio compartilhado</strong><small>Ver opção ↓</small></a>
         <a href="#passeio-privativo"><span>02</span><strong>Passeio privativo</strong><small>Ver opção ↓</small></a>
         <a href="#onde-ficar"><span>03</span><strong>Dicas de onde ficar</strong><small>Ver dicas ↓</small></a>
@@ -108,7 +108,7 @@ export default function Home() {
             <h2>Como você quer<br /><em>viver o mar?</em></h2>
           </div>
           <p>
-            Comece pela opção que mais combina com a sua viagem. Depois, fale com a
+            Comece pela opção que mais combina com a sua viagem. Depois, fale com o
             Manoa pelo WhatsApp para confirmar rota, data, disponibilidade, valor e agendamento.
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function Home() {
 
           <article className="tour-card tour-card--large tour-card--dark" id="passeio-privativo">
             <div className="tour-card__image">
-              <img src="/barco-manoa.jpg" alt="Barco de passeio da Manoa em Angra" />
+              <img src="/barco-manoa.jpg" alt="Barco de passeio do Manoa em Angra" />
               <span className="tour-card__index">02</span>
               <span className="tour-card__label">Privativo</span>
             </div>
@@ -159,7 +159,7 @@ export default function Home() {
               <span className="tour-card__index">03</span>
               <p className="tour-type">Parceiros e conhecimento local</p>
               <h3>Dicas de onde ficar</h3>
-              <p>A Manoa não oferece hospedagem diretamente, mas tem parceiros e pode indicar lugares para você ficar e aproveitar a região com mais calma.</p>
+              <p>O Manoa não oferece hospedagem diretamente, mas tem parceiros e pode indicar lugares para você ficar e aproveitar a região com mais calma.</p>
               <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Pedir indicações <span aria-hidden="true">↗</span></a>
             </div>
             <div className="stay-card__image"><img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" /></div>
@@ -216,7 +216,7 @@ export default function Home() {
           <div className="booking-summary">
             <span className="summary-mark" aria-hidden="true">M</span>
             <div><small>Pronto para agendar?</small><strong>Data + pessoas + experiência</strong></div>
-            <a href={contactUrl} target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp da Manoa">↗</a>
+            <a href={contactUrl} target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp do Manoa">↗</a>
           </div>
         </div>
       </section>
@@ -227,7 +227,7 @@ export default function Home() {
           <span>Ilha Grande • RJ</span>
         </div>
         <div className="why-copy">
-          <p className="eyebrow"><span /> Por que falar com a Manoa</p>
+          <p className="eyebrow"><span /> Por que falar com o Manoa</p>
           <h2>Mais clareza antes.<br /><em>Mais mar depois.</em></h2>
           <div className="why-list">
             <article><span>01</span><div><h3>Contato local</h3><p>Converse diretamente com quem conhece a região e as possibilidades de passeio.</p></div></article>
@@ -241,7 +241,7 @@ export default function Home() {
         <div className="faq-title">
           <p className="eyebrow eyebrow--dark"><span /> Dúvidas frequentes</p>
           <h2>Reserve com<br /><em>mais segurança.</em></h2>
-          <p>Valores, disponibilidade e agendamento são sempre confirmados pelo WhatsApp da Manoa.</p>
+          <p>Valores, disponibilidade e agendamento são sempre confirmados pelo WhatsApp do Manoa.</p>
         </div>
         <div className="faq-list">
           {faqs.map((faq, index) => (
@@ -257,7 +257,7 @@ export default function Home() {
         <div className="cta-photo"><img src="/agua-cristalina.jpg" alt="Água cristalina e embarcações em Angra" /></div>
         <div className="cta-card">
           <p className="eyebrow eyebrow--dark"><span /> Angra está te esperando</p>
-          <h2>Escolha a data.<br /><em>A Manoa ajuda no resto.</em></h2>
+          <h2>Escolha a data.<br /><em>O Manoa ajuda no resto.</em></h2>
           <p>Valores e agendamento de passeios compartilhados ou privativos são tratados diretamente pelo WhatsApp.</p>
           <div className="cta-actions">
             <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">
@@ -277,7 +277,7 @@ export default function Home() {
         <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
       </footer>
 
-      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio com a Manoa pelo WhatsApp">
+      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio com o Manoa pelo WhatsApp">
         <span>Agendar no WhatsApp</span><b aria-hidden="true">↗</b>
       </a>
     </main>
