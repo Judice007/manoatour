@@ -86,6 +86,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /--sun:\s*#f1dfc5/);
   assert.doesNotMatch(css, /#ff875e|#f6c757|rgba\(255,135,94/);
   assert.match(css, /h1, h2\s*\{[^}]*font-weight:\s*400[^}]*letter-spacing:\s*-\.045em/s);
+  assert.match(css, /\.hero\s*\{[^}]*min-height:\s*680px[^}]*height:\s*min\(86svh,\s*820px\)/s);
   assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*250px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
@@ -102,5 +103,6 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(bookingForm, /api\.whatsapp\.com\/send/);
   assert.match(bookingForm, /Passeio compartilhado/);
   assert.match(bookingForm, /Passeio privativo/);
+  assert.match(page, /className="hero-photo"\s+src="\/barco-manoa\.jpg"/);
   await assert.rejects(access(new URL("../app/_sites-preview", root)));
 });

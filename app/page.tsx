@@ -79,7 +79,7 @@ export default function Home() {
         </div>
 
         <div className="hero-visual" aria-label="Passeio de barco em Angra dos Reis">
-          <img className="hero-photo" src="/angra-baia.jpg" alt="Mar azul e embarcações em Angra dos Reis" />
+          <img className="hero-photo" src="/barco-manoa.jpg" alt="Barco do Manoa durante passeio em Angra dos Reis" />
           <div className="hero-shade" />
           <div className="booking-card">
             <p>Encontre a opção ideal para sua viagem</p>
