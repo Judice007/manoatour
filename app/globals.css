@@ -209,7 +209,9 @@ footer { min-height: 150px; padding: 40px clamp(24px, 6vw, 96px); background: va
 .brand--footer img { border-color: rgba(255,255,255,.35); }
 footer > p { margin: 0; color: rgba(255,255,255,.48); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; text-align: center; }
 footer > div { justify-self: end; display: flex; gap: 24px; font-size: 9px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
-.floating-cta { display: none; }
+.floating-cta { position: fixed; z-index: 30; right: 20px; bottom: 20px; display: grid; place-items: center; width: 56px; height: 56px; border: 2px solid rgba(255,255,255,.88); border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 12px 34px rgba(4,35,38,.3); font-size: 25px; line-height: 1; transition: transform .25s ease, box-shadow .25s ease; }
+.floating-cta:hover, .floating-cta:focus-visible { transform: translateY(-3px) scale(1.04); box-shadow: 0 16px 38px rgba(4,35,38,.36); }
+.floating-cta span { transform: rotate(-18deg); }
 
 @media (max-width: 1050px) {
   .desktop-nav { display: none; }
@@ -289,8 +291,7 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 9px; font
   footer { grid-template-columns: 1fr; padding: 46px 24px 100px; text-align: left; }
   footer > p { text-align: left; }
   footer > div { justify-self: start; }
-  .floating-cta { position: fixed; z-index: 30; left: 14px; right: 14px; bottom: 12px; display: flex; justify-content: space-between; align-items: center; padding: 14px 16px 14px 20px; border-radius: 999px; background: var(--coral); color: var(--ink-deep); box-shadow: 0 12px 34px rgba(4,35,38,.32); font-size: 11px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-  .floating-cta b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 16px; }
+  .floating-cta { right: 14px; bottom: 14px; width: 50px; height: 50px; font-size: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

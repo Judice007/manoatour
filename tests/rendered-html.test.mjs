@@ -34,7 +34,7 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Quantidade de pessoas/);
   assert.match(html, /Tipo de experiência/);
   assert.match(html, /Abrir mensagem no WhatsApp/);
-  assert.match(html, /Agendar no WhatsApp/);
+  assert.match(html, /Falar com o Manoa pelo WhatsApp/);
   assert.match(html, /O Manoa oferece hospedagem\?/);
   assert.match(html, /Por que falar com o Manoa/);
   assert.match(html, /manoa-tour-reel\.mp4/);
@@ -83,6 +83,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(css, /\.destination-collage\s*\{[^}]*min-height:\s*520px[^}]*display:\s*grid[^}]*grid-template-columns:\s*1\.15fr\s+\.85fr/s);
   assert.match(css, /\.destination--one\s*\{[^}]*grid-row:\s*1\s*\/\s*-1/s);
+  assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*56px[^}]*background:\s*#25d366/s);
   assert.match(bookingForm, /5524992958552/);
   assert.match(bookingForm, /new URLSearchParams/);
   assert.match(bookingForm, /message\.normalize\("NFC"\)/);

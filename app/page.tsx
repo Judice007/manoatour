@@ -274,8 +274,8 @@ export default function Home() {
         <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
       </footer>
 
-      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio com o Manoa pelo WhatsApp">
-        <span>Agendar no WhatsApp</span><b aria-hidden="true">↗</b>
+      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Falar com o Manoa pelo WhatsApp" title="Falar no WhatsApp">
+        <span aria-hidden="true">☎</span>
       </a>
     </main>
   );
