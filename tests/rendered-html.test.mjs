@@ -84,7 +84,10 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /\.destination-collage\s*\{[^}]*min-height:\s*520px[^}]*display:\s*grid[^}]*grid-template-columns:\s*1\.15fr\s+\.85fr/s);
   assert.match(css, /\.destination--one\s*\{[^}]*grid-row:\s*1\s*\/\s*-1/s);
   assert.match(bookingForm, /5524992958552/);
-  assert.match(bookingForm, /encodeURIComponent\(message\)/);
+  assert.match(bookingForm, /new URLSearchParams/);
+  assert.match(bookingForm, /message\.normalize\("NFC"\)/);
+  assert.match(bookingForm, /\\u\{1F4C5\}\\uFE0F/);
+  assert.match(bookingForm, /api\.whatsapp\.com\/send/);
   assert.match(bookingForm, /Passeio compartilhado/);
   assert.match(bookingForm, /Passeio privativo/);
   await assert.rejects(access(new URL("../app/_sites-preview", root)));

@@ -3,6 +3,20 @@
 import { FormEvent, useMemo, useState } from "react";
 
 const whatsappNumber = "5524992958552";
+const messageIcons = {
+  date: "\u{1F4C5}\uFE0F",
+  people: "\u{1F465}",
+  experience: "\u{1F6A4}",
+};
+
+function buildWhatsAppUrl(message: string) {
+  const params = new URLSearchParams({
+    phone: whatsappNumber,
+    text: message.normalize("NFC"),
+  });
+
+  return `https://api.whatsapp.com/send?${params.toString()}`;
+}
 
 function formatDate(date: string) {
   if (!date) return "data a definir";
@@ -19,12 +33,12 @@ export default function BookingForm() {
     const peopleText = people ? `${people} ${Number(people) === 1 ? "pessoa" : "pessoas"}` : "quantidade a informar";
     const experienceText = experience || "tipo de experiência a definir";
 
-    return `Olá, Manoa! Gostaria de consultar um passeio.\n\n📅 Data: ${formatDate(date)}\n👥 Pessoas: ${peopleText}\n🚤 Experiência: ${experienceText}\n\nPode me informar os valores e a disponibilidade?`;
+    return `Olá, Manoa! Gostaria de consultar um passeio.\n\n${messageIcons.date} Data: ${formatDate(date)}\n${messageIcons.people} Pessoas: ${peopleText}\n${messageIcons.experience} Experiência: ${experienceText}\n\nPode me informar os valores e a disponibilidade?`;
   }, [date, people, experience]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
   }
 
   return (
