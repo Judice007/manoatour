@@ -4,13 +4,13 @@ const contactUrl = "https://linkr.bio/n2x0k";
 const bookingSteps = [
   { number: "01", title: "Data desejada", text: "Diga quando pretende ir para a equipe consultar a disponibilidade." },
   { number: "02", title: "Quantidade de pessoas", text: "Informe o tamanho do grupo para receber uma opção compatível." },
-  { number: "03", title: "Tipo de experiência", text: "Passeio, aluguel de barco ou hospedagem: conte o que você procura." },
+  { number: "03", title: "Tipo de experiência", text: "Passeio compartilhado, privativo ou dicas de onde ficar: conte o que você procura." },
 ];
 
 const faqs = [
   {
     question: "Como faço para consultar um passeio?",
-    answer: "Abra o canal oficial de contato, informe a data, a quantidade de pessoas e se procura passeio, aluguel de barco ou hospedagem.",
+    answer: "Abra o canal oficial de contato, informe a data, a quantidade de pessoas e se procura passeio compartilhado ou privativo.",
   },
   {
     question: "Os valores aparecem no site?",
@@ -21,8 +21,8 @@ const faqs = [
     answer: "Sim. O contato serve justamente para alinhar as possibilidades de rota e escolher uma experiência adequada ao seu grupo.",
   },
   {
-    question: "A Manoa também trabalha com hospedagem?",
-    answer: "Sim. Você pode consultar opções de hospedagem pelo mesmo canal oficial de atendimento.",
+    question: "A Manoa oferece hospedagem?",
+    answer: "Não diretamente. A Manoa tem parceiros e pode dar dicas de lugares para ficar em Angra e na região.",
   },
 ];
 
@@ -63,8 +63,8 @@ export default function Home() {
           <p className="eyebrow"><span /> Passeios em Angra dos Reis</p>
           <h1>Seu próximo passeio começa <em>aqui.</em></h1>
           <p className="hero-lead">
-            Passeios de barco, aluguel de embarcação e hospedagem para você viver
-            Angra e Ilha Grande com atendimento direto e uma rota bem planejada.
+            Passeios compartilhados ou privativos para você viver Angra e Ilha Grande,
+            com atendimento direto e dicas de lugares para ficar através de parceiros.
           </p>
           <div className="hero-actions">
             <a className="button button--primary" href="#passeios">
@@ -86,9 +86,9 @@ export default function Home() {
           <div className="hero-shade" />
           <div className="booking-card">
             <p>O que você quer reservar?</p>
-            <a href="#passeio-barco"><span><b>01</b>Passeio de barco</span><i aria-hidden="true">↓</i></a>
-            <a href="#aluguel-barco"><span><b>02</b>Barco para seu grupo</span><i aria-hidden="true">↓</i></a>
-            <a href="#hospedagem"><span><b>03</b>Hospedagem</span><i aria-hidden="true">↓</i></a>
+            <a href="#passeio-compartilhado"><span><b>01</b>Passeio compartilhado</span><i aria-hidden="true">↓</i></a>
+            <a href="#passeio-privativo"><span><b>02</b>Passeio privativo</span><i aria-hidden="true">↓</i></a>
+            <a href="#onde-ficar"><span><b>03</b>Dicas de onde ficar</span><i aria-hidden="true">↓</i></a>
             <small>Valores e disponibilidade sob consulta.</small>
           </div>
           <div className="location-badge"><span>RJ</span><strong>Angra dos Reis</strong><small>Costa Verde</small></div>
@@ -96,9 +96,9 @@ export default function Home() {
       </section>
 
       <section className="sales-strip" aria-label="Serviços da Manoa">
-        <a href="#passeio-barco"><span>01</span><strong>Passeio de barco</strong><small>Ver opção ↓</small></a>
-        <a href="#aluguel-barco"><span>02</span><strong>Aluguel de barco</strong><small>Ver opção ↓</small></a>
-        <a href="#hospedagem"><span>03</span><strong>Hospedagem</strong><small>Ver opção ↓</small></a>
+        <a href="#passeio-compartilhado"><span>01</span><strong>Passeio compartilhado</strong><small>Ver opção ↓</small></a>
+        <a href="#passeio-privativo"><span>02</span><strong>Passeio privativo</strong><small>Ver opção ↓</small></a>
+        <a href="#onde-ficar"><span>03</span><strong>Dicas de onde ficar</strong><small>Ver dicas ↓</small></a>
       </section>
 
       <section className="section tours" id="passeios">
@@ -114,53 +114,53 @@ export default function Home() {
         </div>
 
         <div className="tour-grid">
-          <article className="tour-card tour-card--large" id="passeio-barco">
+          <article className="tour-card tour-card--large" id="passeio-compartilhado">
             <div className="tour-card__image">
               <img src="/agua-cristalina.jpg" alt="Embarcações em águas cristalinas de Angra dos Reis" />
               <span className="tour-card__index">01</span>
-              <span className="tour-card__label">Passeio</span>
+              <span className="tour-card__label">Compartilhado</span>
             </div>
             <div className="tour-card__content">
-              <p className="tour-type">Para conhecer praias e ilhas</p>
-              <h3>Passeio de barco por Angra</h3>
-              <p>Uma opção para quem quer aproveitar o dia no mar, conhecer novos pontos e receber orientação local antes de embarcar.</p>
-              <ul aria-label="Características do passeio">
-                <li>Praias e ilhas</li><li>Rota alinhada</li><li>Consulta direta</li>
+              <p className="tour-type">Para viver o mar com outros viajantes</p>
+              <h3>Passeio compartilhado</h3>
+              <p>Conheça praias e ilhas dividindo a experiência do passeio com outras pessoas. Consulte a rota, a data e as vagas disponíveis.</p>
+              <ul aria-label="Características do passeio compartilhado">
+                <li>Compartilhado</li><li>Praias e ilhas</li><li>Consulta direta</li>
               </ul>
               <div className="tour-card__footer">
-                <span><small>Valor</small><strong>Sob consulta</strong></span>
-                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio de barco">↗</a>
+                <span><small>Vagas e valor</small><strong>Sob consulta</strong></span>
+                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio compartilhado">↗</a>
               </div>
             </div>
           </article>
 
-          <article className="tour-card tour-card--large tour-card--dark" id="aluguel-barco">
+          <article className="tour-card tour-card--large tour-card--dark" id="passeio-privativo">
             <div className="tour-card__image">
               <img src="/barco-manoa.jpg" alt="Barco de passeio da Manoa em Angra" />
               <span className="tour-card__index">02</span>
-              <span className="tour-card__label">Aluguel</span>
+              <span className="tour-card__label">Privativo</span>
             </div>
             <div className="tour-card__content">
-              <p className="tour-type">Para viajar no ritmo do seu grupo</p>
-              <h3>Barco para o seu grupo</h3>
-              <p>Converse sobre uma rota para casal, família ou grupo de amigos e consulte as embarcações disponíveis para a sua data.</p>
-              <ul aria-label="Características do aluguel de barco">
-                <li>Mais liberdade</li><li>Rota conversada</li><li>Seu grupo</li>
+              <p className="tour-type">Para viver o mar com o seu grupo</p>
+              <h3>Passeio privativo</h3>
+              <p>Uma experiência reservada para casal, família ou grupo de amigos, com mais privacidade e possibilidades de rota conversadas antes.</p>
+              <ul aria-label="Características do passeio privativo">
+                <li>Seu grupo</li><li>Mais privacidade</li><li>Rota conversada</li>
               </ul>
               <div className="tour-card__footer">
                 <span><small>Disponibilidade</small><strong>Sob consulta</strong></span>
-                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar aluguel de barco">↗</a>
+                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio privativo">↗</a>
               </div>
             </div>
           </article>
 
-          <article className="stay-card" id="hospedagem">
+          <article className="stay-card" id="onde-ficar">
             <div className="stay-card__copy">
               <span className="tour-card__index">03</span>
-              <p className="tour-type">Fique mais perto da natureza</p>
-              <h3>Hospedagem em Angra</h3>
-              <p>Quer estender a experiência? Consulte as opções de hospedagem e planeje mais dias para descobrir a região com calma.</p>
-              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Consultar hospedagem <span aria-hidden="true">↗</span></a>
+              <p className="tour-type">Parceiros e conhecimento local</p>
+              <h3>Dicas de onde ficar</h3>
+              <p>A Manoa não oferece hospedagem diretamente, mas tem parceiros e pode indicar lugares para você ficar e aproveitar a região com mais calma.</p>
+              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Pedir indicações <span aria-hidden="true">↗</span></a>
             </div>
             <div className="stay-card__image"><img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" /></div>
           </article>
@@ -258,7 +258,7 @@ export default function Home() {
         <div className="cta-card">
           <p className="eyebrow eyebrow--dark"><span /> Angra está te esperando</p>
           <h2>Escolha a data.<br /><em>A Manoa ajuda no resto.</em></h2>
-          <p>Consulte passeio, aluguel de barco ou hospedagem pelo canal oficial.</p>
+          <p>Consulte passeio compartilhado ou privativo e peça dicas de parceiros para ficar na região.</p>
           <div className="cta-actions">
             <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">
               Consultar agora <span aria-hidden="true">↗</span>
@@ -273,7 +273,7 @@ export default function Home() {
           <img src="/manoa-profile.jpg" alt="" />
           <span><strong>manoa.tour</strong><small>Angra dos Reis</small></span>
         </a>
-        <p>Passeios • aluguel de barco • hospedagem</p>
+        <p>Passeios compartilhados • passeios privativos • dicas de parceiros</p>
         <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">Contato ↗</a></div>
       </footer>
 

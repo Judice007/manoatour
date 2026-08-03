@@ -25,10 +25,13 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /<html[^>]+lang="pt-BR"/i);
   assert.match(html, /<title>Manoa Tour \| Reserve seu passeio em Angra dos Reis<\/title>/i);
   assert.match(html, /Seu próximo passeio começa/);
-  assert.match(html, /Passeios de barco/);
+  assert.match(html, /Passeio compartilhado/);
+  assert.match(html, /Passeio privativo/);
   assert.match(html, /Consultar disponibilidade/);
-  assert.match(html, /Barco para o seu grupo/);
   assert.match(html, /Valores e disponibilidade sob consulta/);
+  assert.match(html, /não oferece hospedagem diretamente/);
+  assert.match(html, /Pedir indicações/);
+  assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);
   assert.match(html, /Praia Vermelha/);
   assert.match(html, /https:\/\/linkr\.bio\/n2x0k/);
   assert.match(html, /https:\/\/www\.instagram\.com\/manoa\.tour\//);
