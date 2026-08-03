@@ -9,16 +9,16 @@ const bookingSteps = [
 
 const faqs = [
   {
-    question: "Como faço para consultar um passeio?",
-    answer: "Abra o canal oficial de contato, informe a data, a quantidade de pessoas e se procura passeio compartilhado ou privativo.",
+    question: "Como faço para agendar um passeio?",
+    answer: "Chame a Manoa pelo WhatsApp e informe a data, a quantidade de pessoas e se procura passeio compartilhado ou privativo.",
   },
   {
     question: "Os valores aparecem no site?",
-    answer: "Os valores e a disponibilidade são confirmados diretamente pela equipe, de acordo com a data e a experiência desejada.",
+    answer: "Os valores, as vagas, a disponibilidade e o agendamento são tratados diretamente com a equipe pelo WhatsApp.",
   },
   {
     question: "Posso conversar sobre a rota antes de reservar?",
-    answer: "Sim. O contato serve justamente para alinhar as possibilidades de rota e escolher uma experiência adequada ao seu grupo.",
+    answer: "Sim. Pelo WhatsApp, você pode alinhar as possibilidades de rota e escolher uma experiência adequada ao seu grupo.",
   },
   {
     question: "A Manoa oferece hospedagem?",
@@ -43,7 +43,7 @@ export default function Home() {
         </nav>
 
         <a className="header-cta" href={contactUrl} target="_blank" rel="noreferrer">
-          Consultar agora <span aria-hidden="true">↗</span>
+          Falar no WhatsApp <span aria-hidden="true">↗</span>
         </a>
 
         <details className="mobile-menu">
@@ -53,7 +53,7 @@ export default function Home() {
             <a href="#destinos">Destinos</a>
             <a href="#reserva">Como reservar</a>
             <a href="#duvidas">Dúvidas</a>
-            <a href={contactUrl} target="_blank" rel="noreferrer">Consultar passeio ↗</a>
+            <a href={contactUrl} target="_blank" rel="noreferrer">Falar no WhatsApp ↗</a>
           </nav>
         </details>
       </header>
@@ -71,7 +71,7 @@ export default function Home() {
               Ver opções de passeio <span aria-hidden="true">↓</span>
             </a>
             <a className="button button--ghost" href={contactUrl} target="_blank" rel="noreferrer">
-              Consultar disponibilidade <span aria-hidden="true">↗</span>
+              Valores e agendamento <span aria-hidden="true">↗</span>
             </a>
           </div>
           <div className="hero-proof" aria-label="Diferenciais da Manoa">
@@ -89,7 +89,7 @@ export default function Home() {
             <a href="#passeio-compartilhado"><span><b>01</b>Passeio compartilhado</span><i aria-hidden="true">↓</i></a>
             <a href="#passeio-privativo"><span><b>02</b>Passeio privativo</span><i aria-hidden="true">↓</i></a>
             <a href="#onde-ficar"><span><b>03</b>Dicas de onde ficar</span><i aria-hidden="true">↓</i></a>
-            <small>Valores e disponibilidade sob consulta.</small>
+            <small>Valores e agendamento direto no WhatsApp.</small>
           </div>
           <div className="location-badge"><span>RJ</span><strong>Angra dos Reis</strong><small>Costa Verde</small></div>
         </div>
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <p>
             Comece pela opção que mais combina com a sua viagem. Depois, fale com a
-            Manoa para confirmar rota, data, disponibilidade e valor.
+            Manoa pelo WhatsApp para confirmar rota, data, disponibilidade, valor e agendamento.
           </p>
         </div>
 
@@ -128,8 +128,8 @@ export default function Home() {
                 <li>Compartilhado</li><li>Praias e ilhas</li><li>Consulta direta</li>
               </ul>
               <div className="tour-card__footer">
-                <span><small>Vagas e valor</small><strong>Sob consulta</strong></span>
-                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio compartilhado">↗</a>
+                <span><small>Valores e agendamento</small><strong>No WhatsApp</strong></span>
+                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio compartilhado pelo WhatsApp">↗</a>
               </div>
             </div>
           </article>
@@ -148,8 +148,8 @@ export default function Home() {
                 <li>Seu grupo</li><li>Mais privacidade</li><li>Rota conversada</li>
               </ul>
               <div className="tour-card__footer">
-                <span><small>Disponibilidade</small><strong>Sob consulta</strong></span>
-                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio privativo">↗</a>
+                <span><small>Valores e agendamento</small><strong>No WhatsApp</strong></span>
+                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio privativo pelo WhatsApp">↗</a>
               </div>
             </div>
           </article>
@@ -198,11 +198,11 @@ export default function Home() {
 
       <section className="booking-section" id="reserva">
         <div className="booking-copy">
-          <p className="eyebrow eyebrow--dark"><span /> Consulta rápida</p>
+          <p className="eyebrow eyebrow--dark"><span /> Agendamento pelo WhatsApp</p>
           <h2>Para começar, envie <em>só o essencial.</em></h2>
-          <p>Com três informações, a conversa já começa mais objetiva e a equipe consegue orientar melhor a sua escolha.</p>
+          <p>Com três informações, a conversa pelo WhatsApp já começa mais objetiva e a equipe consegue passar os valores e orientar sua escolha.</p>
           <a className="button button--primary" href={contactUrl} target="_blank" rel="noreferrer">
-            Consultar meu passeio <span aria-hidden="true">↗</span>
+            Agendar pelo WhatsApp <span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -215,8 +215,8 @@ export default function Home() {
           ))}
           <div className="booking-summary">
             <span className="summary-mark" aria-hidden="true">M</span>
-            <div><small>Pronto para consultar?</small><strong>Data + pessoas + experiência</strong></div>
-            <a href={contactUrl} target="_blank" rel="noreferrer" aria-label="Abrir canal oficial da Manoa">↗</a>
+            <div><small>Pronto para agendar?</small><strong>Data + pessoas + experiência</strong></div>
+            <a href={contactUrl} target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp da Manoa">↗</a>
           </div>
         </div>
       </section>
@@ -232,7 +232,7 @@ export default function Home() {
           <div className="why-list">
             <article><span>01</span><div><h3>Contato local</h3><p>Converse diretamente com quem conhece a região e as possibilidades de passeio.</p></div></article>
             <article><span>02</span><div><h3>Escolha orientada</h3><p>Entenda qual opção combina melhor com a data, o grupo e o ritmo da sua viagem.</p></div></article>
-            <article><span>03</span><div><h3>Informação antes de ir</h3><p>Alinhe rota, disponibilidade e o que precisa saber antes de confirmar.</p></div></article>
+            <article><span>03</span><div><h3>Informação antes de ir</h3><p>Alinhe rota, disponibilidade, valores e agendamento diretamente pelo WhatsApp.</p></div></article>
           </div>
         </div>
       </section>
@@ -241,7 +241,7 @@ export default function Home() {
         <div className="faq-title">
           <p className="eyebrow eyebrow--dark"><span /> Dúvidas frequentes</p>
           <h2>Reserve com<br /><em>mais segurança.</em></h2>
-          <p>As condições finais são sempre confirmadas pelo canal oficial da Manoa.</p>
+          <p>Valores, disponibilidade e agendamento são sempre confirmados pelo WhatsApp da Manoa.</p>
         </div>
         <div className="faq-list">
           {faqs.map((faq, index) => (
@@ -258,10 +258,10 @@ export default function Home() {
         <div className="cta-card">
           <p className="eyebrow eyebrow--dark"><span /> Angra está te esperando</p>
           <h2>Escolha a data.<br /><em>A Manoa ajuda no resto.</em></h2>
-          <p>Consulte passeio compartilhado ou privativo e peça dicas de parceiros para ficar na região.</p>
+          <p>Valores e agendamento de passeios compartilhados ou privativos são tratados diretamente pelo WhatsApp.</p>
           <div className="cta-actions">
             <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">
-              Consultar agora <span aria-hidden="true">↗</span>
+              Falar no WhatsApp <span aria-hidden="true">↗</span>
             </a>
             <a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer">Ver @manoa.tour</a>
           </div>
@@ -274,11 +274,11 @@ export default function Home() {
           <span><strong>manoa.tour</strong><small>Angra dos Reis</small></span>
         </a>
         <p>Passeios compartilhados • passeios privativos • dicas de parceiros</p>
-        <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">Contato ↗</a></div>
+        <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
       </footer>
 
-      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio com a Manoa">
-        <span>Consultar passeio</span><b aria-hidden="true">↗</b>
+      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio com a Manoa pelo WhatsApp">
+        <span>Agendar no WhatsApp</span><b aria-hidden="true">↗</b>
       </a>
     </main>
   );

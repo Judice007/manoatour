@@ -27,8 +27,10 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Seu próximo passeio começa/);
   assert.match(html, /Passeio compartilhado/);
   assert.match(html, /Passeio privativo/);
-  assert.match(html, /Consultar disponibilidade/);
-  assert.match(html, /Valores e disponibilidade sob consulta/);
+  assert.match(html, /Valores e agendamento/);
+  assert.match(html, /direto no WhatsApp/);
+  assert.match(html, /Agendar pelo WhatsApp/);
+  assert.match(html, /Agendar no WhatsApp/);
   assert.match(html, /não oferece hospedagem diretamente/);
   assert.match(html, /Pedir indicações/);
   assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);

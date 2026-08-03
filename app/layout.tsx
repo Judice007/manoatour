@@ -3,21 +3,21 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Manoa Tour | Reserve seu passeio em Angra dos Reis",
-  description: "Consulte passeios compartilhados ou privativos em Angra dos Reis e receba dicas de parceiros para ficar na região.",
+  description: "Passeios compartilhados ou privativos em Angra dos Reis, com valores e agendamento direto pelo WhatsApp.",
   icons: {
     icon: "/manoa-profile.jpg",
     apple: "/manoa-profile.jpg",
   },
   openGraph: {
     title: "Manoa Tour | Passeios em Angra dos Reis",
-    description: "Passeios compartilhados ou privativos em Angra dos Reis e Ilha Grande.",
+    description: "Passeios compartilhados ou privativos, com valores e agendamento direto pelo WhatsApp.",
     type: "website",
     images: [{ url: "/og.png", width: 1536, height: 1024, alt: "Manoa Tour — passeios em Angra dos Reis" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Manoa Tour | Passeios em Angra dos Reis",
-    description: "Consulte seu próximo passeio por Angra e Ilha Grande.",
+    description: "Valores e agendamento do seu passeio direto pelo WhatsApp.",
     images: ["/og.png"],
   },
 };
