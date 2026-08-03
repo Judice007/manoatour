@@ -83,7 +83,8 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(css, /\.stay-card__steps strong\s*\{[^}]*font-size:\s*clamp\(21px,\s*1\.6vw,\s*25px\)/s);
   assert.match(css, /\.stay-card__steps small\s*\{[^}]*font-size:\s*13px[^}]*font-weight:\s*650/s);
-  assert.match(css, /\.destination-collage\s*\{[^}]*min-height:\s*520px[^}]*display:\s*grid[^}]*grid-template-columns:\s*1\.15fr\s+\.85fr/s);
+  assert.match(css, /\.destination-collage\s*\{[^}]*min-height:\s*0[^}]*height:\s*clamp\(400px,\s*56vh,\s*480px\)[^}]*display:\s*grid/s);
+  assert.match(css, /@media\s*\(min-width:\s*1051px\)\s*and\s*\(max-height:\s*760px\)/);
   assert.match(css, /\.destination--one\s*\{[^}]*grid-row:\s*1\s*\/\s*-1/s);
   assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*56px[^}]*background:\s*#25d366/s);
   assert.match(bookingForm, /5524992958552/);
