@@ -148,14 +148,15 @@ h1 em, h2 em { color: var(--coral); font-weight: 400; font-style: italic; }
 .destination figcaption strong { font-family: var(--serif); font-size: 20px; font-weight: 400; }
 .destination figcaption small { color: rgba(255,255,255,.64); font-size: 8px; text-transform: uppercase; letter-spacing: .14em; }
 
-.booking-section { padding: clamp(90px, 10vw, 150px) clamp(24px, 6vw, 96px); display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(50px, 8vw, 130px); background: var(--sand); }
+.booking-section { padding: clamp(72px, 7vw, 110px) clamp(24px, 6vw, 96px); display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(40px, 6vw, 90px); background: var(--sand); }
 .booking-copy { align-self: start; position: sticky; top: 70px; }
-.booking-copy > p:not(.eyebrow) { max-width: 500px; margin: 28px 0 34px; color: #5d7574; font-size: 15px; line-height: 1.75; }
+.booking-copy h2 { font-size: clamp(44px, 4.5vw, 72px); }
+.booking-copy > p:not(.eyebrow) { max-width: 500px; margin: 22px 0 26px; color: #5d7574; font-size: 15px; line-height: 1.7; }
 .booking-contact { display: inline-flex; flex-direction: column; gap: 5px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.38); }
 .booking-contact small { font-size: 8px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
 .booking-contact strong { font-family: var(--serif); font-size: 21px; font-weight: 400; }
-.booking-form { padding: clamp(26px, 3.5vw, 42px); border-radius: 28px; background: var(--ink); color: #fff; box-shadow: 0 24px 70px rgba(4,35,38,.12); }
-.booking-form__intro { display: flex; flex-direction: column; gap: 7px; margin-bottom: 26px; }
+.booking-form { padding: clamp(24px, 3vw, 36px); border-radius: 26px; background: var(--ink); color: #fff; box-shadow: 0 24px 70px rgba(4,35,38,.12); }
+.booking-form__intro { display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px; }
 .booking-form__intro span, .booking-form__preview > span { color: var(--aqua); font-size: 8px; font-weight: 900; letter-spacing: .15em; text-transform: uppercase; }
 .booking-form__intro strong { font-family: var(--serif); font-size: clamp(26px, 2.5vw, 36px); font-weight: 400; letter-spacing: -.025em; }
 .booking-form__fields { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
@@ -283,8 +284,9 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 9px; font
   .destination figcaption span { width: 30px; height: 30px; }
   .destination figcaption strong { font-size: 16px; }
   .destination--two figcaption small, .destination--three figcaption small { display: none; }
-  .booking-section { padding: 86px 20px; }
-  .booking-form { padding: 26px 20px; border-radius: 22px; }
+  .booking-section { padding: 72px 20px; }
+  .booking-copy h2 { font-size: clamp(40px, 11vw, 54px); }
+  .booking-form { padding: 24px 20px; border-radius: 22px; }
   .booking-form__fields { grid-template-columns: 1fr; }
   .booking-field--wide { grid-column: auto; }
   .why-section { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
