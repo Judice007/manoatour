@@ -157,13 +157,23 @@ export default function Home() {
 
           <article className="stay-card" id="onde-ficar">
             <div className="stay-card__copy">
-              <span className="tour-card__index">03</span>
-              <p className="tour-type">Parceiros e conhecimento local</p>
-              <h3>Dicas de onde ficar</h3>
-              <p>O Manoa não oferece hospedagem diretamente, mas tem parceiros e pode indicar lugares para você ficar e aproveitar a região com mais calma.</p>
-              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Pedir indicações <span aria-hidden="true">↗</span></a>
+              <div className="stay-card__heading">
+                <span className="tour-card__index">03</span>
+                <p className="tour-type">Indicação de parceiros</p>
+              </div>
+              <h3>Dicas para escolher onde ficar.</h3>
+              <p>O Manoa não oferece hospedagem, mas pode sugerir regiões e parceiros de acordo com o seu tipo de viagem.</p>
+              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Pedir dicas no WhatsApp <span aria-hidden="true">↗</span></a>
             </div>
-            <div className="stay-card__image"><img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" /></div>
+            <ol className="stay-card__steps" aria-label="Como pedir uma indicação de hospedagem">
+              <li><span>01</span><div><strong>Conte sua viagem</strong><small>Data, grupo e estilo de estadia.</small></div></li>
+              <li><span>02</span><div><strong>Receba sugestões</strong><small>Regiões e parceiros que podem combinar.</small></div></li>
+              <li><span>03</span><div><strong>Combine diretamente</strong><small>Você fala com a hospedagem indicada.</small></div></li>
+            </ol>
+            <div className="stay-card__image">
+              <img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" />
+              <span>Angra dos Reis • Costa Verde</span>
+            </div>
           </article>
         </div>
       </section>

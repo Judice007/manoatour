@@ -37,8 +37,10 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Takes reais/);
   assert.match(html, /Planeje rápido/);
   assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
-  assert.match(html, /não oferece hospedagem diretamente/);
-  assert.match(html, /Pedir indicações/);
+  assert.match(html, /não oferece hospedagem/);
+  assert.match(html, /Pedir dicas no WhatsApp/);
+  assert.match(html, /Receba sugestões/);
+  assert.match(html, /Combine diretamente/);
   assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);
   assert.match(html, /Praia Vermelha/);
   assert.match(html, /https:\/\/linkr\.bio\/n2x0k/);
