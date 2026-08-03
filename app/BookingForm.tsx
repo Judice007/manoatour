@@ -33,7 +33,7 @@ export default function BookingForm() {
     const peopleText = people ? `${people} ${Number(people) === 1 ? "pessoa" : "pessoas"}` : "quantidade a informar";
     const experienceText = experience || "tipo de experiência a definir";
 
-    return `Olá, Manoa! Gostaria de consultar um passeio.\n\n${messageIcons.date} Data: ${formatDate(date)}\n${messageIcons.people} Pessoas: ${peopleText}\n${messageIcons.experience} Experiência: ${experienceText}\n\nPode me informar os valores e a disponibilidade?`;
+    return `Olá, Manoa! Gostaria de solicitar informações sobre um passeio.\n\n${messageIcons.date} Data: ${formatDate(date)}\n${messageIcons.people} Pessoas: ${peopleText}\n${messageIcons.experience} Experiência: ${experienceText}\n\nPoderia, por favor, informar os valores e a disponibilidade para essa opção?`;
   }, [date, people, experience]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -45,7 +45,7 @@ export default function BookingForm() {
     <form className="booking-form" onSubmit={handleSubmit}>
       <div className="booking-form__intro">
         <span>01 — Preencha</span>
-        <strong>Conte como será o passeio</strong>
+        <strong>Informe os dados do passeio</strong>
       </div>
 
       <div className="booking-form__fields">
@@ -71,14 +71,14 @@ export default function BookingForm() {
       </div>
 
       <div className="booking-form__preview" aria-live="polite">
-        <span>02 — Mensagem pronta</span>
+        <span>02 — Mensagem para revisão</span>
         <p>{message}</p>
       </div>
 
       <button className="button button--primary booking-form__submit" type="submit">
-        Abrir mensagem no WhatsApp <span aria-hidden="true">↗</span>
+        Consultar pelo WhatsApp <span aria-hidden="true">↗</span>
       </button>
-      <small className="booking-form__note">Você poderá revisar a mensagem antes de enviar.</small>
+      <small className="booking-form__note">Antes do envio, você poderá revisar e editar a mensagem no WhatsApp.</small>
     </form>
   );
 }

@@ -7,19 +7,19 @@ const tourReelUrl = "https://www.instagram.com/manoa.tour/reel/DV9y_xxiggt/";
 const faqs = [
   {
     question: "Como faço para agendar um passeio?",
-    answer: "Chame o Manoa pelo WhatsApp e informe a data, a quantidade de pessoas e se procura passeio compartilhado ou privativo.",
+    answer: "O agendamento é feito diretamente pelo WhatsApp. Informe a data desejada, o número de pessoas e a preferência entre passeio compartilhado ou privativo.",
   },
   {
     question: "Os valores aparecem no site?",
-    answer: "Os valores, as vagas, a disponibilidade e o agendamento são tratados diretamente com a equipe pelo WhatsApp.",
+    answer: "Não. Valores, vagas e disponibilidade variam conforme a data e a experiência escolhida; a confirmação é feita diretamente pelo WhatsApp.",
   },
   {
     question: "Posso conversar sobre a rota antes de reservar?",
-    answer: "Sim. Pelo WhatsApp, você pode alinhar as possibilidades de rota e escolher uma experiência adequada ao seu grupo.",
+    answer: "Sim. Antes da reserva, o Manoa apresenta as possibilidades de rota para ajudar você a escolher a opção mais adequada ao perfil do grupo.",
   },
   {
     question: "O Manoa oferece hospedagem?",
-    answer: "Não diretamente. O Manoa tem parceiros e pode dar dicas de lugares para ficar em Angra e na região.",
+    answer: "O Manoa não oferece hospedagem. Porém, pode indicar regiões e parceiros locais para você avaliar e contratar diretamente.",
   },
 ];
 
@@ -57,24 +57,24 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Passeios em Angra dos Reis</p>
-          <h1>Seu próximo passeio começa <em>aqui.</em></h1>
+          <p className="eyebrow"><span /> Experiências náuticas em Angra dos Reis</p>
+          <h1>Explore Angra por uma nova <em>perspectiva.</em></h1>
           <p className="hero-lead">
-            Passeios compartilhados ou privativos para você viver Angra e Ilha Grande,
-            com atendimento direto e dicas de lugares para ficar através de parceiros.
+            Escolha entre passeios compartilhados ou privativos em Angra e Ilha Grande,
+            com atendimento direto para consultar rotas, disponibilidade e valores.
           </p>
           <div className="hero-actions">
             <a className="button button--primary" href="#passeios">
-              Ver opções de passeio <span aria-hidden="true">↓</span>
+              Conhecer os passeios <span aria-hidden="true">↓</span>
             </a>
             <a className="button button--ghost" href={contactUrl} target="_blank" rel="noreferrer">
-              Valores e agendamento <span aria-hidden="true">↗</span>
+              Consultar disponibilidade <span aria-hidden="true">↗</span>
             </a>
           </div>
           <div className="hero-proof" aria-label="Diferenciais do Manoa">
-            <span>Atendimento local</span><i aria-hidden="true" />
-            <span>Rota conversada</span><i aria-hidden="true" />
-            <span>Contato direto</span>
+            <span>Atendimento direto</span><i aria-hidden="true" />
+            <span>Orientação local</span><i aria-hidden="true" />
+            <span>Experiências sob consulta</span>
           </div>
         </div>
 
@@ -82,11 +82,11 @@ export default function Home() {
           <img className="hero-photo" src="/angra-baia.jpg" alt="Mar azul e embarcações em Angra dos Reis" />
           <div className="hero-shade" />
           <div className="booking-card">
-            <p>O que você quer reservar?</p>
+            <p>Encontre a opção ideal para sua viagem</p>
             <a href="#passeio-compartilhado"><span><b>01</b>Passeio compartilhado</span><i aria-hidden="true">↓</i></a>
             <a href="#passeio-privativo"><span><b>02</b>Passeio privativo</span><i aria-hidden="true">↓</i></a>
-            <a href="#onde-ficar"><span><b>03</b>Dicas de onde ficar</span><i aria-hidden="true">↓</i></a>
-            <small>Valores e agendamento direto no WhatsApp.</small>
+            <a href="#onde-ficar"><span><b>03</b>Indicações de hospedagem</span><i aria-hidden="true">↓</i></a>
+            <small>Valores, disponibilidade e reservas pelo WhatsApp.</small>
           </div>
           <div className="location-badge"><span>RJ</span><strong>Angra dos Reis</strong><small>Costa Verde</small></div>
         </div>
@@ -95,18 +95,18 @@ export default function Home() {
       <section className="sales-strip" aria-label="Serviços do Manoa">
         <a href="#passeio-compartilhado"><span>01</span><strong>Passeio compartilhado</strong><small>Ver opção ↓</small></a>
         <a href="#passeio-privativo"><span>02</span><strong>Passeio privativo</strong><small>Ver opção ↓</small></a>
-        <a href="#onde-ficar"><span>03</span><strong>Dicas de onde ficar</strong><small>Ver dicas ↓</small></a>
+        <a href="#onde-ficar"><span>03</span><strong>Indicações de hospedagem</strong><small>Ver indicações ↓</small></a>
       </section>
 
       <section className="section tours" id="passeios">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow--dark"><span /> Escolha a experiência</p>
-            <h2>Como você quer<br /><em>viver o mar?</em></h2>
+            <p className="eyebrow eyebrow--dark"><span /> Escolha seu passeio</p>
+            <h2>Uma experiência para<br /><em>cada forma de viajar.</em></h2>
           </div>
           <p>
-            Comece pela opção que mais combina com a sua viagem. Depois, fale com o
-            Manoa pelo WhatsApp para confirmar rota, data, disponibilidade, valor e agendamento.
+            Compare as opções e escolha a que melhor atende ao perfil do seu grupo.
+            Rotas, valores, disponibilidade e agendamento são confirmados com o Manoa pelo WhatsApp.
           </p>
         </div>
 
@@ -118,14 +118,14 @@ export default function Home() {
               <span className="tour-card__label">Compartilhado</span>
             </div>
             <div className="tour-card__content">
-              <p className="tour-type">Para viver o mar com outros viajantes</p>
+              <p className="tour-type">Experiência em grupo</p>
               <h3>Passeio compartilhado</h3>
-              <p>Conheça praias e ilhas dividindo a experiência do passeio com outras pessoas. Consulte a rota, a data e as vagas disponíveis.</p>
+              <p>Uma opção para conhecer praias e ilhas ao lado de outros viajantes. Consulte as datas, o roteiro previsto e as vagas disponíveis.</p>
               <ul aria-label="Características do passeio compartilhado">
-                <li>Compartilhado</li><li>Praias e ilhas</li><li>Consulta direta</li>
+                <li>Experiência em grupo</li><li>Praias e ilhas</li><li>Vagas sob consulta</li>
               </ul>
               <div className="tour-card__footer">
-                <span><small>Valores e agendamento</small><strong>No WhatsApp</strong></span>
+                <span><small>Consulta e agendamento</small><strong>Pelo WhatsApp</strong></span>
                 <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio compartilhado pelo WhatsApp">↗</a>
               </div>
             </div>
@@ -138,14 +138,14 @@ export default function Home() {
               <span className="tour-card__label">Privativo</span>
             </div>
             <div className="tour-card__content">
-              <p className="tour-type">Para viver o mar com o seu grupo</p>
+              <p className="tour-type">Experiência exclusiva para o seu grupo</p>
               <h3>Passeio privativo</h3>
-              <p>Uma experiência reservada para casal, família ou grupo de amigos, com mais privacidade e possibilidades de rota conversadas antes.</p>
+              <p>Passeio reservado para casal, família ou grupo de amigos, com mais privacidade e possibilidades de rota alinhadas antes da saída.</p>
               <ul aria-label="Características do passeio privativo">
-                <li>Seu grupo</li><li>Mais privacidade</li><li>Rota conversada</li>
+                <li>Exclusivo para o grupo</li><li>Mais privacidade</li><li>Rota alinhada</li>
               </ul>
               <div className="tour-card__footer">
-                <span><small>Valores e agendamento</small><strong>No WhatsApp</strong></span>
+                <span><small>Consulta e agendamento</small><strong>Pelo WhatsApp</strong></span>
                 <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Agendar passeio privativo pelo WhatsApp">↗</a>
               </div>
             </div>
@@ -155,16 +155,16 @@ export default function Home() {
             <div className="stay-card__copy">
               <div className="stay-card__heading">
                 <span className="tour-card__index">03</span>
-                <p className="tour-type">Indicação de parceiros</p>
+                <p className="tour-type">Rede de parceiros locais</p>
               </div>
-              <h3>Dicas para escolher onde ficar.</h3>
-              <p>O Manoa não oferece hospedagem, mas pode sugerir regiões e parceiros de acordo com o seu tipo de viagem.</p>
-              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Pedir dicas no WhatsApp <span aria-hidden="true">↗</span></a>
+              <h3>Orientação para escolher onde ficar.</h3>
+              <p>O Manoa não oferece hospedagem, mas pode indicar regiões e parceiros locais de acordo com o perfil e as necessidades da sua viagem.</p>
+              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Solicitar indicações <span aria-hidden="true">↗</span></a>
             </div>
             <ol className="stay-card__steps" aria-label="Como pedir uma indicação de hospedagem">
-              <li><span>01</span><div><strong>Conte sua viagem</strong><small>Data, grupo e estilo de estadia.</small></div></li>
-              <li><span>02</span><div><strong>Receba sugestões</strong><small>Regiões e parceiros que podem combinar.</small></div></li>
-              <li><span>03</span><div><strong>Combine diretamente</strong><small>Você fala com a hospedagem indicada.</small></div></li>
+              <li><span>01</span><div><strong>Compartilhe seu planejamento</strong><small>Informe datas, número de pessoas e preferências.</small></div></li>
+              <li><span>02</span><div><strong>Receba orientações</strong><small>Conheça regiões e parceiros adequados ao seu perfil.</small></div></li>
+              <li><span>03</span><div><strong>Contrate diretamente</strong><small>A escolha e a contratação são feitas com a hospedagem indicada.</small></div></li>
             </ol>
             <div className="stay-card__image">
               <img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" />
@@ -176,14 +176,14 @@ export default function Home() {
 
       <section className="destination-section" id="destinos">
         <div className="destination-intro">
-          <p className="eyebrow"><span /> Cenários da Costa Verde</p>
-          <h2>Um passeio.<br /><em>Muitos Angras.</em></h2>
+          <p className="eyebrow"><span /> Descubra a Costa Verde</p>
+          <h2>Um destino.<br /><em>Muitas possibilidades.</em></h2>
           <p>
-            Mar transparente, ilhas, praias cercadas pela Mata Atlântica e diferentes
-            possibilidades de rota. A escolha começa pelo tipo de dia que você quer viver.
+            Águas transparentes, ilhas e praias cercadas pela Mata Atlântica compõem
+            diferentes possibilidades de rota em Angra e Ilha Grande.
           </p>
           <a className="button button--light" href={contactUrl} target="_blank" rel="noreferrer">
-            Falar sobre a rota <span aria-hidden="true">↗</span>
+            Consultar possibilidades de rota <span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -194,7 +194,7 @@ export default function Home() {
           </figure>
           <figure className="destination destination--two">
             <img src="/costa-verde.jpg" alt="Águas verdes cercadas pela Mata Atlântica" />
-            <figcaption><span>02</span><strong>Costa Verde</strong><small>Mar + natureza</small></figcaption>
+            <figcaption><span>02</span><strong>Costa Verde</strong><small>Mar e natureza</small></figcaption>
           </figure>
           <figure className="destination destination--three">
             <img src="/angra-baia.jpg" alt="Baía e embarcações em Angra dos Reis" />
@@ -205,9 +205,9 @@ export default function Home() {
 
       <section className="booking-section" id="reserva">
         <div className="booking-copy">
-          <p className="eyebrow eyebrow--dark"><span /> Agendamento pelo WhatsApp</p>
-          <h2>Monte a mensagem.<br /><em>O WhatsApp abre pronto.</em></h2>
-          <p>Informe a data, quantas pessoas vão e o tipo de passeio. O site organiza tudo em uma mensagem para o Manoa confirmar valores e disponibilidade.</p>
+          <p className="eyebrow eyebrow--dark"><span /> Planeje seu passeio</p>
+          <h2>Envie sua solicitação<br /><em>em poucos passos.</em></h2>
+          <p>Informe a data, o número de pessoas e o tipo de experiência. O WhatsApp será aberto com a mensagem organizada para consultar valores e disponibilidade.</p>
           <div className="booking-contact">
             <small>WhatsApp oficial</small>
             <strong>+55 24 99295-8552</strong>
@@ -224,12 +224,12 @@ export default function Home() {
           <span>Takes reais • @manoa.tour</span>
         </a>
         <div className="why-copy">
-          <p className="eyebrow"><span /> Por que falar com o Manoa</p>
-          <h2>Planeje rápido.<br /><em>Viva mais o mar.</em></h2>
+          <p className="eyebrow"><span /> Atendimento do Manoa</p>
+          <h2>Planejamento claro.<br /><em>Experiência bem orientada.</em></h2>
           <div className="why-list">
-            <article><span>01</span><div><h3>Contato local</h3><p>Fale direto com quem conhece Angra.</p></div></article>
-            <article><span>02</span><div><h3>Escolha orientada</h3><p>Compartilhado ou privativo, conforme seu grupo.</p></div></article>
-            <article><span>03</span><div><h3>Tudo alinhado</h3><p>Rota, valores e agendamento pelo WhatsApp.</p></div></article>
+            <article><span>01</span><div><h3>Conhecimento local</h3><p>Orientação de quem conhece Angra e a região.</p></div></article>
+            <article><span>02</span><div><h3>Opções para cada grupo</h3><p>Passeio compartilhado ou privativo, conforme o perfil da viagem.</p></div></article>
+            <article><span>03</span><div><h3>Informações centralizadas</h3><p>Rota, disponibilidade, valores e agendamento alinhados pelo WhatsApp.</p></div></article>
           </div>
         </div>
       </section>
@@ -237,8 +237,8 @@ export default function Home() {
       <section className="faq-section section" id="duvidas">
         <div className="faq-title">
           <p className="eyebrow eyebrow--dark"><span /> Dúvidas frequentes</p>
-          <h2>Reserve com<br /><em>mais segurança.</em></h2>
-          <p>Valores, disponibilidade e agendamento são sempre confirmados pelo WhatsApp do Manoa.</p>
+          <h2>Informações para reservar<br /><em>com tranquilidade.</em></h2>
+          <p>As condições de cada passeio são confirmadas diretamente com o Manoa pelo WhatsApp.</p>
         </div>
         <div className="faq-list">
           {faqs.map((faq, index) => (
@@ -253,12 +253,12 @@ export default function Home() {
       <section className="cta-section">
         <div className="cta-photo"><img src="/agua-cristalina.jpg" alt="Água cristalina e embarcações em Angra" /></div>
         <div className="cta-card">
-          <p className="eyebrow eyebrow--dark"><span /> Angra está te esperando</p>
-          <h2>Escolha a data.<br /><em>O Manoa ajuda no resto.</em></h2>
-          <p>Valores e agendamento de passeios compartilhados ou privativos são tratados diretamente pelo WhatsApp.</p>
+          <p className="eyebrow eyebrow--dark"><span /> Planeje sua experiência em Angra</p>
+          <h2>Escolha a data.<br /><em>O Manoa orienta o próximo passo.</em></h2>
+          <p>Consulte opções de passeio, valores e disponibilidade diretamente pelo WhatsApp.</p>
           <div className="cta-actions">
             <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">
-              Falar no WhatsApp <span aria-hidden="true">↗</span>
+              Consultar disponibilidade <span aria-hidden="true">↗</span>
             </a>
             <a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer">Ver @manoa.tour</a>
           </div>
@@ -270,7 +270,7 @@ export default function Home() {
           <img src="/manoa-profile.jpg" alt="" />
           <span><strong>manoa.tour</strong><small>Angra dos Reis</small></span>
         </a>
-        <p>Passeios compartilhados • passeios privativos • dicas de parceiros</p>
+        <p>Passeios compartilhados • passeios privativos • orientação local</p>
         <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
       </footer>
 
