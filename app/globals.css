@@ -8,8 +8,8 @@
   --aqua-soft: #c8f0e9;
   --sand: #f3efe6;
   --paper: #fffdf8;
-  --coral: #ff875e;
-  --sun: #f6c757;
+  --coral: #ef7652;
+  --sun: #f1dfc5;
   --line: rgba(8, 46, 49, .17);
   --serif: "DM Serif Display", Georgia, "Times New Roman", serif;
   --sans: "DM Sans", "Segoe UI Variable", "Segoe UI", Helvetica, Arial, sans-serif;
@@ -50,7 +50,7 @@ h1 em, h2 em { color: var(--coral); font-weight: 400; font-style: italic; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .button { display: inline-flex; width: max-content; align-items: center; justify-content: center; gap: 22px; padding: 16px 20px 16px 24px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
-.button--primary { background: var(--coral); color: var(--ink-deep); box-shadow: 0 12px 38px rgba(255,135,94,.2); }
+.button--primary { background: var(--coral); color: var(--ink-deep); box-shadow: 0 12px 38px rgba(239,118,82,.24); }
 .button--ghost { border: 1px solid rgba(255,255,255,.35); color: #fff; }
 .button--ghost:hover, .button--ghost:focus-visible { background: rgba(255,255,255,.1); }
 .button--dark { background: var(--ink); color: #fff; }
@@ -76,7 +76,7 @@ h1 em, h2 em { color: var(--coral); font-weight: 400; font-style: italic; }
 
 .sales-strip { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--coral); border-bottom: 1px solid rgba(8,46,49,.26); }
 .sales-strip a { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; padding: 20px clamp(18px, 3vw, 42px); border-right: 1px solid rgba(8,46,49,.23); transition: background .25s ease; }
-.sales-strip a:hover, .sales-strip a:focus-visible { background: #ff9b78; }
+.sales-strip a:hover, .sales-strip a:focus-visible { background: #f58a68; }
 .sales-strip span { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid rgba(8,46,49,.34); border-radius: 50%; font-family: var(--serif); font-size: 10px; font-style: italic; }
 .sales-strip strong { font-family: var(--serif); font-size: clamp(18px, 1.6vw, 25px); font-weight: 400; letter-spacing: -.015em; }
 .sales-strip small { font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }

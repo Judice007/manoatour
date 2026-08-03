@@ -82,6 +82,9 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /family=DM\+Sans:[^"']+family=DM\+Serif\+Display/);
   assert.match(css, /--serif:\s*"DM Serif Display"/);
   assert.match(css, /--sans:\s*"DM Sans"/);
+  assert.match(css, /--coral:\s*#ef7652/);
+  assert.match(css, /--sun:\s*#f1dfc5/);
+  assert.doesNotMatch(css, /#ff875e|#f6c757|rgba\(255,135,94/);
   assert.match(css, /h1, h2\s*\{[^}]*font-weight:\s*400[^}]*letter-spacing:\s*-\.045em/s);
   assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*250px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
