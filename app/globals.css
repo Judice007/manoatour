@@ -172,15 +172,15 @@ h1 em, h2 em { color: var(--coral); font-weight: 400; }
 .booking-form__submit { width: 100%; border: 0; cursor: pointer; font-family: inherit; }
 .booking-form__note { display: block; margin-top: 11px; color: rgba(255,255,255,.46); font-size: 10px; text-align: center; }
 
-.why-section { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(24px, 4vw, 64px); padding: clamp(24px, 3.5vw, 54px); background: var(--aqua-soft); }
-.why-image { position: relative; min-height: 440px; overflow: hidden; border-radius: 28px; background: var(--ink); }
-.why-image video { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; transition: transform .9s ease; }
+.why-section { display: grid; grid-template-columns: minmax(190px, 220px) 1fr; align-items: center; gap: clamp(30px, 5vw, 80px); padding: clamp(28px, 3.5vw, 52px) clamp(24px, 6vw, 96px); background: var(--aqua-soft); }
+.why-image { position: relative; width: 100%; max-width: 220px; aspect-ratio: 9 / 16; min-height: 0; justify-self: center; overflow: hidden; border-radius: 24px; background: var(--ink); }
+.why-image video { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .9s ease; }
 .why-section:hover .why-image video { transform: scale(1.025); }
 .why-image > span { position: absolute; left: 22px; bottom: 22px; padding: 10px 14px; border-radius: 999px; background: rgba(4,35,38,.8); color: #fff; font-size: 8px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
-.why-copy { padding: clamp(24px, 3vw, 46px) clamp(4px, 2vw, 28px) clamp(24px, 3vw, 46px) 0; display: flex; flex-direction: column; justify-content: center; }
-.why-copy h2 { font-size: clamp(42px, 4.3vw, 68px); }
-.why-list { margin-top: 24px; border-top: 1px solid rgba(8,46,49,.18); }
-.why-list article { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 15px 0; border-bottom: 1px solid rgba(8,46,49,.18); }
+.why-copy { padding: 0; display: flex; flex-direction: column; justify-content: center; }
+.why-copy h2 { font-size: clamp(40px, 4vw, 64px); }
+.why-list { margin-top: 20px; border-top: 1px solid rgba(8,46,49,.18); }
+.why-list article { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(8,46,49,.18); }
 .why-list article > span { padding-top: 3px; font-family: var(--serif); font-size: 12px; font-style: italic; }
 .why-list h3 { margin: 0 0 3px; font-family: var(--serif); font-size: 21px; font-weight: 500; letter-spacing: -.03em; }
 .why-list p { margin: 0; color: #4c6b69; font-size: 12px; line-height: 1.45; }
@@ -233,7 +233,7 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 9px; font
   .destination-intro { max-width: 700px; }
   .destination-collage { width: min(760px, 100%); justify-self: center; }
   .booking-copy { position: static; }
-  .why-copy { padding: 34px 24px 34px 0; }
+  .why-copy { padding: 0; }
 }
 
 @media (max-width: 760px) {
@@ -272,9 +272,10 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 9px; font
   .booking-form { padding: 26px 20px; border-radius: 22px; }
   .booking-form__fields { grid-template-columns: 1fr; }
   .booking-field--wide { grid-column: auto; }
-  .why-section { grid-template-columns: 1fr; gap: 28px; padding: 20px; }
-  .why-image { min-height: 360px; border-radius: 20px; }
-  .why-copy { padding: 18px 2px 32px; }
+  .why-section { grid-template-columns: 1fr; gap: 24px; padding: 20px; }
+  .why-image { width: min(190px, 58vw); min-height: 0; border-radius: 20px; }
+  .why-copy { padding: 4px 2px 24px; }
+  .why-copy h2 { font-size: clamp(38px, 11vw, 50px); }
   .faq-section { gap: 46px; }
   .faq-list summary { grid-template-columns: 30px 1fr auto; gap: 10px; }
   .faq-list details > p { margin-left: 40px; margin-right: 20px; }

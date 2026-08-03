@@ -79,6 +79,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(layout, /lang="pt-BR"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*220px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(bookingForm, /5524992958552/);
   assert.match(bookingForm, /encodeURIComponent\(message\)/);
   assert.match(bookingForm, /Passeio compartilhado/);
