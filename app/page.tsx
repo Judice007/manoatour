@@ -1,5 +1,6 @@
 const instagramUrl = "https://www.instagram.com/manoa.tour/";
 const contactUrl = "https://linkr.bio/n2x0k";
+const tourReelUrl = "https://www.instagram.com/manoa.tour/reel/DV9y_xxiggt/";
 
 const bookingSteps = [
   { number: "01", title: "Data desejada", text: "Diga quando pretende ir para a equipe consultar a disponibilidade." },
@@ -222,17 +223,19 @@ export default function Home() {
       </section>
 
       <section className="why-section">
-        <div className="why-image">
-          <img src="/praia-vermelha.jpg" alt="Praia Vermelha e barco em Ilha Grande" />
-          <span>Ilha Grande • RJ</span>
-        </div>
+        <a className="why-image" href={tourReelUrl} target="_blank" rel="noreferrer" aria-label="Assistir ao Reel original do Manoa no Instagram">
+          <video autoPlay muted loop playsInline preload="metadata" poster="/praia-vermelha.jpg" aria-hidden="true">
+            <source src="/manoa-tour-reel.mp4" type="video/mp4" />
+          </video>
+          <span>Takes reais • @manoa.tour</span>
+        </a>
         <div className="why-copy">
           <p className="eyebrow"><span /> Por que falar com o Manoa</p>
-          <h2>Mais clareza antes.<br /><em>Mais mar depois.</em></h2>
+          <h2>Planeje rápido.<br /><em>Viva mais o mar.</em></h2>
           <div className="why-list">
-            <article><span>01</span><div><h3>Contato local</h3><p>Converse diretamente com quem conhece a região e as possibilidades de passeio.</p></div></article>
-            <article><span>02</span><div><h3>Escolha orientada</h3><p>Entenda qual opção combina melhor com a data, o grupo e o ritmo da sua viagem.</p></div></article>
-            <article><span>03</span><div><h3>Informação antes de ir</h3><p>Alinhe rota, disponibilidade, valores e agendamento diretamente pelo WhatsApp.</p></div></article>
+            <article><span>01</span><div><h3>Contato local</h3><p>Fale direto com quem conhece Angra.</p></div></article>
+            <article><span>02</span><div><h3>Escolha orientada</h3><p>Compartilhado ou privativo, conforme seu grupo.</p></div></article>
+            <article><span>03</span><div><h3>Tudo alinhado</h3><p>Rota, valores e agendamento pelo WhatsApp.</p></div></article>
           </div>
         </div>
       </section>

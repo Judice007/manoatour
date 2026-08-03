@@ -33,6 +33,9 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Agendar no WhatsApp/);
   assert.match(html, /O Manoa oferece hospedagem\?/);
   assert.match(html, /Por que falar com o Manoa/);
+  assert.match(html, /manoa-tour-reel\.mp4/);
+  assert.match(html, /Takes reais/);
+  assert.match(html, /Planeje rápido/);
   assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
   assert.match(html, /não oferece hospedagem diretamente/);
   assert.match(html, /Pedir indicações/);
@@ -59,6 +62,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
     "agua-cristalina.jpg",
     "praia-ilha-grande.jpg",
     "costa-verde.jpg",
+    "manoa-tour-reel.mp4",
     "og.png",
   ]) {
     await access(new URL(`../public/${asset}`, import.meta.url));
