@@ -116,7 +116,7 @@ h1 em, h2 em { color: var(--coral); font-weight: 400; }
 .stay-card { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr .88fr .72fr; overflow: hidden; border-radius: 26px; background: var(--sand); }
 .stay-card__copy { position: relative; padding: clamp(30px, 3.5vw, 48px); display: flex; flex-direction: column; justify-content: center; }
 .stay-card__heading { display: flex; align-items: center; gap: 13px; margin-bottom: 18px; }
-.stay-card__heading .tour-type { margin: 0; }
+.stay-card__heading .tour-type { margin: 0; font-size: clamp(11px, .9vw, 13px); letter-spacing: .13em; }
 .stay-card__copy .tour-card__index { position: static; flex: 0 0 auto; border-color: rgba(8,46,49,.35); color: var(--ink); }
 .stay-card__copy > p:not(.tour-type) { margin: 14px 0 20px; line-height: 1.55; }
 .stay-card__copy .button { align-self: flex-start; }

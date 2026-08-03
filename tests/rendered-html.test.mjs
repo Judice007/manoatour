@@ -80,6 +80,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(layout, /lang="pt-BR"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*220px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
+  assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(bookingForm, /5524992958552/);
   assert.match(bookingForm, /encodeURIComponent\(message\)/);
   assert.match(bookingForm, /Passeio compartilhado/);
