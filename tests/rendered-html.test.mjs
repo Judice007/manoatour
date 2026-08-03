@@ -79,11 +79,15 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(layout, /lang="pt-BR"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(css, /family=DM\+Sans:[^"']+family=DM\+Serif\+Display/);
+  assert.match(css, /--serif:\s*"DM Serif Display"/);
+  assert.match(css, /--sans:\s*"DM Sans"/);
+  assert.match(css, /h1, h2\s*\{[^}]*font-weight:\s*400[^}]*letter-spacing:\s*-\.045em/s);
   assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*250px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(css, /\.stay-card__steps strong\s*\{[^}]*font-size:\s*clamp\(21px,\s*1\.6vw,\s*25px\)/s);
-  assert.match(css, /\.stay-card__steps small\s*\{[^}]*font-size:\s*13px[^}]*font-weight:\s*650/s);
+  assert.match(css, /\.stay-card__steps small\s*\{[^}]*font-size:\s*13px[^}]*font-weight:\s*500/s);
   assert.match(css, /\.destination-collage\s*\{[^}]*min-height:\s*0[^}]*height:\s*clamp\(400px,\s*56vh,\s*480px\)[^}]*display:\s*grid/s);
   assert.match(css, /@media\s*\(min-width:\s*1051px\)\s*and\s*\(max-height:\s*760px\)/);
   assert.match(css, /\.destination--one\s*\{[^}]*grid-row:\s*1\s*\/\s*-1/s);
