@@ -1,4 +1,5 @@
 import BookingForm from "./BookingForm";
+import { FaWhatsapp } from "react-icons/fa";
 
 const instagramUrl = "https://www.instagram.com/manoa.tour/";
 const contactUrl = "https://wa.me/5524992958552";
@@ -275,7 +276,7 @@ export default function Home() {
       </footer>
 
       <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Falar com o Manoa pelo WhatsApp" title="Falar no WhatsApp">
-        <span aria-hidden="true">☎</span>
+        <FaWhatsapp aria-hidden="true" focusable="false" />
       </a>
     </main>
   );

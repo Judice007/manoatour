@@ -98,6 +98,8 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /@media\s*\(min-width:\s*1051px\)\s*and\s*\(max-height:\s*760px\)/);
   assert.match(css, /\.destination--one\s*\{[^}]*grid-row:\s*1\s*\/\s*-1/s);
   assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*56px[^}]*background:\s*#25d366/s);
+  assert.match(page, /import\s*\{\s*FaWhatsapp\s*\}\s*from\s*["']react-icons\/fa["']/);
+  assert.match(page, /<FaWhatsapp\s+aria-hidden="true"\s+focusable="false"\s*\/>/);
   assert.match(bookingForm, /5524992958552/);
   assert.match(bookingForm, /new URLSearchParams/);
   assert.match(bookingForm, /message\.normalize\("NFC"\)/);
