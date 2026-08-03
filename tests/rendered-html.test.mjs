@@ -79,7 +79,8 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(layout, /lang="pt-BR"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*220px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
+  assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*320px[^}]*aspect-ratio:\s*4\s*\/\s*5/s);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(css, /\.stay-card__steps strong\s*\{[^}]*font-size:\s*clamp\(21px,\s*1\.6vw,\s*25px\)/s);
   assert.match(css, /\.stay-card__steps small\s*\{[^}]*font-size:\s*13px[^}]*font-weight:\s*650/s);
