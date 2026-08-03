@@ -1,31 +1,29 @@
 const instagramUrl = "https://www.instagram.com/manoa.tour/";
 const contactUrl = "https://linkr.bio/n2x0k";
 
-const services = [
-  {
-    number: "01",
-    title: "Passeios de barco",
-    text: "Descubra praias, ilhas e águas transparentes em um roteiro pensado para aproveitar Angra sem pressa.",
-    className: "service-card service-card--teal",
-  },
-  {
-    number: "02",
-    title: "Aluguel de barco",
-    text: "Escolha viver o mar do seu jeito. Consulte a equipe para montar a rota e verificar a disponibilidade.",
-    className: "service-card service-card--sand",
-  },
-  {
-    number: "03",
-    title: "Hospedagem",
-    text: "Uma base perto da natureza para desacelerar, descansar e continuar explorando a Costa Verde.",
-    className: "service-card service-card--coral",
-  },
+const bookingSteps = [
+  { number: "01", title: "Data desejada", text: "Diga quando pretende ir para a equipe consultar a disponibilidade." },
+  { number: "02", title: "Quantidade de pessoas", text: "Informe o tamanho do grupo para receber uma opção compatível." },
+  { number: "03", title: "Tipo de experiência", text: "Passeio, aluguel de barco ou hospedagem: conte o que você procura." },
 ];
 
-const steps = [
-  ["01", "Conte como quer viajar", "Fale com a equipe, informe as datas e o tipo de experiência que procura."],
-  ["02", "Receba uma rota possível", "A Manoa orienta as opções de passeio, hospedagem e o que levar para a viagem."],
-  ["03", "Viva Angra de verdade", "Embarque com mais clareza e aproveite o encontro entre mar, mata e cultura caiçara."],
+const faqs = [
+  {
+    question: "Como faço para consultar um passeio?",
+    answer: "Abra o canal oficial de contato, informe a data, a quantidade de pessoas e se procura passeio, aluguel de barco ou hospedagem.",
+  },
+  {
+    question: "Os valores aparecem no site?",
+    answer: "Os valores e a disponibilidade são confirmados diretamente pela equipe, de acordo com a data e a experiência desejada.",
+  },
+  {
+    question: "Posso conversar sobre a rota antes de reservar?",
+    answer: "Sim. O contato serve justamente para alinhar as possibilidades de rota e escolher uma experiência adequada ao seu grupo.",
+  },
+  {
+    question: "A Manoa também trabalha com hospedagem?",
+    answer: "Sim. Você pode consultar opções de hospedagem pelo mesmo canal oficial de atendimento.",
+  },
 ];
 
 export default function Home() {
@@ -34,107 +32,151 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Manoa Tour — início">
           <img src="/manoa-profile.jpg" alt="" />
-          <span>
-            <strong>manoa.tour</strong>
-            <small>Angra dos Reis</small>
-          </span>
+          <span><strong>manoa.tour</strong><small>Angra dos Reis</small></span>
         </a>
 
         <nav className="desktop-nav" aria-label="Navegação principal">
-          <a href="#experiencias">Experiências</a>
+          <a href="#passeios">Passeios</a>
           <a href="#destinos">Destinos</a>
-          <a href="#como-funciona">Como funciona</a>
+          <a href="#reserva">Como reservar</a>
+          <a href="#duvidas">Dúvidas</a>
         </nav>
 
         <a className="header-cta" href={contactUrl} target="_blank" rel="noreferrer">
-          Quero planejar <span aria-hidden="true">↗</span>
+          Consultar agora <span aria-hidden="true">↗</span>
         </a>
 
         <details className="mobile-menu">
           <summary aria-label="Abrir menu"><span /><span /></summary>
           <nav aria-label="Navegação móvel">
-            <a href="#experiencias">Experiências</a>
+            <a href="#passeios">Passeios</a>
             <a href="#destinos">Destinos</a>
-            <a href="#como-funciona">Como funciona</a>
-            <a href={contactUrl} target="_blank" rel="noreferrer">Planejar viagem ↗</a>
+            <a href="#reserva">Como reservar</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a href={contactUrl} target="_blank" rel="noreferrer">Consultar passeio ↗</a>
           </nav>
         </details>
       </header>
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Passeios • barco • hospedagem</p>
-          <h1>Angra fica ainda melhor <em>vista do mar.</em></h1>
+          <p className="eyebrow"><span /> Passeios em Angra dos Reis</p>
+          <h1>Seu próximo passeio começa <em>aqui.</em></h1>
           <p className="hero-lead">
-            Roteiros pela Costa Verde para quem quer água transparente, natureza viva
-            e uma viagem feita com contato local.
+            Passeios de barco, aluguel de embarcação e hospedagem para você viver
+            Angra e Ilha Grande com atendimento direto e uma rota bem planejada.
           </p>
           <div className="hero-actions">
-            <a className="button button--primary" href={contactUrl} target="_blank" rel="noreferrer">
-              Planejar meu passeio <span aria-hidden="true">↗</span>
+            <a className="button button--primary" href="#passeios">
+              Ver opções de passeio <span aria-hidden="true">↓</span>
             </a>
-            <a className="text-link" href="#destinos">Explorar destinos <span aria-hidden="true">↓</span></a>
+            <a className="button button--ghost" href={contactUrl} target="_blank" rel="noreferrer">
+              Consultar disponibilidade <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div className="hero-note">
-            <span className="note-marker" aria-hidden="true">M</span>
-            <p><strong>Rota com contexto local</strong><br />Atendimento direto para entender a sua viagem.</p>
+          <div className="hero-proof" aria-label="Diferenciais da Manoa">
+            <span>Atendimento local</span><i aria-hidden="true" />
+            <span>Rota conversada</span><i aria-hidden="true" />
+            <span>Contato direto</span>
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Paisagens de Angra dos Reis e Ilha Grande">
-          <div className="hero-image-main">
-            <img src="/angra-baia.jpg" alt="Mar azul e embarcações em Angra dos Reis" />
+        <div className="hero-visual" aria-label="Passeio de barco em Angra dos Reis">
+          <img className="hero-photo" src="/angra-baia.jpg" alt="Mar azul e embarcações em Angra dos Reis" />
+          <div className="hero-shade" />
+          <div className="booking-card">
+            <p>O que você quer reservar?</p>
+            <a href="#passeio-barco"><span><b>01</b>Passeio de barco</span><i aria-hidden="true">↓</i></a>
+            <a href="#aluguel-barco"><span><b>02</b>Barco para seu grupo</span><i aria-hidden="true">↓</i></a>
+            <a href="#hospedagem"><span><b>03</b>Hospedagem</span><i aria-hidden="true">↓</i></a>
+            <small>Valores e disponibilidade sob consulta.</small>
           </div>
-          <div className="hero-image-small">
-            <img src="/barco-manoa.jpg" alt="Barco de passeio da Manoa em águas verdes" />
-          </div>
-          <div className="route-card">
-            <span className="route-kicker">Costa Verde</span>
-            <strong>mar <i>→</i> ilha <i>→</i> pausa</strong>
-          </div>
-          <div className="sun-disc" aria-hidden="true"><span>feito em</span><strong>ANGRA</strong></div>
-        </div>
-      </section>
-
-      <section className="marquee" aria-label="Destaques">
-        <div>
-          <span>Ilha Grande</span><i>✦</i><span>Angra dos Reis</span><i>✦</i>
-          <span>Praias e ilhas</span><i>✦</i><span>Vida marinha</span><i>✦</i>
-          <span>Ilha Grande</span><i>✦</i><span>Angra dos Reis</span><i>✦</i>
+          <div className="location-badge"><span>RJ</span><strong>Angra dos Reis</strong><small>Costa Verde</small></div>
         </div>
       </section>
 
-      <section className="section experiences" id="experiencias">
+      <section className="sales-strip" aria-label="Serviços da Manoa">
+        <a href="#passeio-barco"><span>01</span><strong>Passeio de barco</strong><small>Ver opção ↓</small></a>
+        <a href="#aluguel-barco"><span>02</span><strong>Aluguel de barco</strong><small>Ver opção ↓</small></a>
+        <a href="#hospedagem"><span>03</span><strong>Hospedagem</strong><small>Ver opção ↓</small></a>
+      </section>
+
+      <section className="section tours" id="passeios">
         <div className="section-heading">
-          <p className="eyebrow eyebrow--dark"><span /> Escolha sua experiência</p>
-          <h2>Seu tempo em Angra,<br /><em>do seu jeito.</em></h2>
-          <p>Do primeiro contato ao dia da viagem, a ideia é simples: menos dúvida e mais tempo para aproveitar.</p>
+          <div>
+            <p className="eyebrow eyebrow--dark"><span /> Escolha a experiência</p>
+            <h2>Como você quer<br /><em>viver o mar?</em></h2>
+          </div>
+          <p>
+            Comece pela opção que mais combina com a sua viagem. Depois, fale com a
+            Manoa para confirmar rota, data, disponibilidade e valor.
+          </p>
         </div>
-        <div className="service-grid">
-          {services.map((service) => (
-            <article className={service.className} key={service.title}>
-              <span className="card-number">{service.number}</span>
-              <div className="service-icon" aria-hidden="true"><span /></div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-              <a href={contactUrl} target="_blank" rel="noreferrer" aria-label={`Consultar ${service.title}`}>
-                Consultar <span aria-hidden="true">↗</span>
-              </a>
-            </article>
-          ))}
+
+        <div className="tour-grid">
+          <article className="tour-card tour-card--large" id="passeio-barco">
+            <div className="tour-card__image">
+              <img src="/agua-cristalina.jpg" alt="Embarcações em águas cristalinas de Angra dos Reis" />
+              <span className="tour-card__index">01</span>
+              <span className="tour-card__label">Passeio</span>
+            </div>
+            <div className="tour-card__content">
+              <p className="tour-type">Para conhecer praias e ilhas</p>
+              <h3>Passeio de barco por Angra</h3>
+              <p>Uma opção para quem quer aproveitar o dia no mar, conhecer novos pontos e receber orientação local antes de embarcar.</p>
+              <ul aria-label="Características do passeio">
+                <li>Praias e ilhas</li><li>Rota alinhada</li><li>Consulta direta</li>
+              </ul>
+              <div className="tour-card__footer">
+                <span><small>Valor</small><strong>Sob consulta</strong></span>
+                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio de barco">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article className="tour-card tour-card--large tour-card--dark" id="aluguel-barco">
+            <div className="tour-card__image">
+              <img src="/barco-manoa.jpg" alt="Barco de passeio da Manoa em Angra" />
+              <span className="tour-card__index">02</span>
+              <span className="tour-card__label">Aluguel</span>
+            </div>
+            <div className="tour-card__content">
+              <p className="tour-type">Para viajar no ritmo do seu grupo</p>
+              <h3>Barco para o seu grupo</h3>
+              <p>Converse sobre uma rota para casal, família ou grupo de amigos e consulte as embarcações disponíveis para a sua data.</p>
+              <ul aria-label="Características do aluguel de barco">
+                <li>Mais liberdade</li><li>Rota conversada</li><li>Seu grupo</li>
+              </ul>
+              <div className="tour-card__footer">
+                <span><small>Disponibilidade</small><strong>Sob consulta</strong></span>
+                <a className="circle-link" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar aluguel de barco">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article className="stay-card" id="hospedagem">
+            <div className="stay-card__copy">
+              <span className="tour-card__index">03</span>
+              <p className="tour-type">Fique mais perto da natureza</p>
+              <h3>Hospedagem em Angra</h3>
+              <p>Quer estender a experiência? Consulte as opções de hospedagem e planeje mais dias para descobrir a região com calma.</p>
+              <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">Consultar hospedagem <span aria-hidden="true">↗</span></a>
+            </div>
+            <div className="stay-card__image"><img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" /></div>
+          </article>
         </div>
       </section>
 
       <section className="destination-section" id="destinos">
         <div className="destination-intro">
-          <p className="eyebrow"><span /> Onde o verde encontra o azul</p>
-          <h2>Mais natureza.<br /><em>Menos roteiro óbvio.</em></h2>
+          <p className="eyebrow"><span /> Cenários da Costa Verde</p>
+          <h2>Um passeio.<br /><em>Muitos Angras.</em></h2>
           <p>
-            Angra e Ilha Grande guardam diferentes ritmos de viagem. A Manoa ajuda você a
-            entender o que combina com seu grupo, sua data e seu jeito de aproveitar.
+            Mar transparente, ilhas, praias cercadas pela Mata Atlântica e diferentes
+            possibilidades de rota. A escolha começa pelo tipo de dia que você quer viver.
           </p>
           <a className="button button--light" href={contactUrl} target="_blank" rel="noreferrer">
-            Descobrir possibilidades <span aria-hidden="true">↗</span>
+            Falar sobre a rota <span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -144,60 +186,84 @@ export default function Home() {
             <figcaption><span>01</span><strong>Praia Vermelha</strong><small>Ilha Grande</small></figcaption>
           </figure>
           <figure className="destination destination--two">
-            <img src="/agua-cristalina.jpg" alt="Barcos em água cristalina na Costa Verde" />
-            <figcaption><span>02</span><strong>Águas de Angra</strong><small>Costa Verde</small></figcaption>
+            <img src="/costa-verde.jpg" alt="Águas verdes cercadas pela Mata Atlântica" />
+            <figcaption><span>02</span><strong>Costa Verde</strong><small>Mar + natureza</small></figcaption>
           </figure>
           <figure className="destination destination--three">
-            <img src="/praia-ilha-grande.jpg" alt="Praia cercada pela Mata Atlântica em Ilha Grande" />
-            <figcaption><span>03</span><strong>Ilha Grande</strong><small>Mar + Mata Atlântica</small></figcaption>
+            <img src="/angra-baia.jpg" alt="Baía e embarcações em Angra dos Reis" />
+            <figcaption><span>03</span><strong>Angra dos Reis</strong><small>Praias e ilhas</small></figcaption>
           </figure>
         </div>
       </section>
 
-      <section className="section process" id="como-funciona">
-        <div className="process-title">
-          <p className="eyebrow eyebrow--dark"><span /> Simples do início ao embarque</p>
-          <h2>Você chega com a vontade.<br /><em>A rota ganha forma.</em></h2>
+      <section className="booking-section" id="reserva">
+        <div className="booking-copy">
+          <p className="eyebrow eyebrow--dark"><span /> Consulta rápida</p>
+          <h2>Para começar, envie <em>só o essencial.</em></h2>
+          <p>Com três informações, a conversa já começa mais objetiva e a equipe consegue orientar melhor a sua escolha.</p>
+          <a className="button button--primary" href={contactUrl} target="_blank" rel="noreferrer">
+            Consultar meu passeio <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <div className="steps">
-          {steps.map(([number, title, text]) => (
-            <article className="step" key={number}>
-              <span>{number}</span>
-              <div><h3>{title}</h3><p>{text}</p></div>
+
+        <div className="booking-steps">
+          {bookingSteps.map((step) => (
+            <article key={step.number}>
+              <span>{step.number}</span>
+              <div><h3>{step.title}</h3><p>{step.text}</p></div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="wildlife">
-        <div className="wildlife-image">
-          <img src="/costa-verde.jpg" alt="Águas verdes cercadas pela Mata Atlântica em Angra" />
-          <span className="image-label">natureza em primeiro plano</span>
-        </div>
-        <div className="wildlife-copy">
-          <p className="eyebrow"><span /> Vida marinha</p>
-          <h2>O passeio também é sobre <em>olhar com mais atenção.</em></h2>
-          <p>
-            A região reúne Mata Atlântica, ilhas e uma biodiversidade que merece respeito.
-            Cada saída é uma chance de conhecer o território sem transformar a natureza em promessa.
-          </p>
-          <div className="wildlife-tags" aria-label="Valores da experiência">
-            <span>Contemplação</span><span>Respeito</span><span>Consciência</span>
+          <div className="booking-summary">
+            <span className="summary-mark" aria-hidden="true">M</span>
+            <div><small>Pronto para consultar?</small><strong>Data + pessoas + experiência</strong></div>
+            <a href={contactUrl} target="_blank" rel="noreferrer" aria-label="Abrir canal oficial da Manoa">↗</a>
           </div>
         </div>
       </section>
 
+      <section className="why-section">
+        <div className="why-image">
+          <img src="/praia-vermelha.jpg" alt="Praia Vermelha e barco em Ilha Grande" />
+          <span>Ilha Grande • RJ</span>
+        </div>
+        <div className="why-copy">
+          <p className="eyebrow"><span /> Por que falar com a Manoa</p>
+          <h2>Mais clareza antes.<br /><em>Mais mar depois.</em></h2>
+          <div className="why-list">
+            <article><span>01</span><div><h3>Contato local</h3><p>Converse diretamente com quem conhece a região e as possibilidades de passeio.</p></div></article>
+            <article><span>02</span><div><h3>Escolha orientada</h3><p>Entenda qual opção combina melhor com a data, o grupo e o ritmo da sua viagem.</p></div></article>
+            <article><span>03</span><div><h3>Informação antes de ir</h3><p>Alinhe rota, disponibilidade e o que precisa saber antes de confirmar.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="faq-section section" id="duvidas">
+        <div className="faq-title">
+          <p className="eyebrow eyebrow--dark"><span /> Dúvidas frequentes</p>
+          <h2>Reserve com<br /><em>mais segurança.</em></h2>
+          <p>As condições finais são sempre confirmadas pelo canal oficial da Manoa.</p>
+        </div>
+        <div className="faq-list">
+          {faqs.map((faq, index) => (
+            <details key={faq.question}>
+              <summary><span>0{index + 1}</span>{faq.question}<i aria-hidden="true">+</i></summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
       <section className="cta-section">
-        <div className="cta-photo"><img src="/angra-baia.jpg" alt="Vista do mar de Angra dos Reis" /></div>
+        <div className="cta-photo"><img src="/agua-cristalina.jpg" alt="Água cristalina e embarcações em Angra" /></div>
         <div className="cta-card">
-          <p className="eyebrow eyebrow--dark"><span /> Sua próxima história começa aqui</p>
-          <h2>Que tal trocar o “um dia” por <em>uma data?</em></h2>
-          <p>Chame a Manoa, conte como você imagina a viagem e receba as informações para começar a planejar.</p>
+          <p className="eyebrow eyebrow--dark"><span /> Angra está te esperando</p>
+          <h2>Escolha a data.<br /><em>A Manoa ajuda no resto.</em></h2>
+          <p>Consulte passeio, aluguel de barco ou hospedagem pelo canal oficial.</p>
           <div className="cta-actions">
             <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">
-              Abrir canais de contato <span aria-hidden="true">↗</span>
+              Consultar agora <span aria-hidden="true">↗</span>
             </a>
-            <a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer">@manoa.tour</a>
+            <a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer">Ver @manoa.tour</a>
           </div>
         </div>
       </section>
@@ -207,12 +273,12 @@ export default function Home() {
           <img src="/manoa-profile.jpg" alt="" />
           <span><strong>manoa.tour</strong><small>Angra dos Reis</small></span>
         </a>
-        <p>Passeios e aluguel de barco • Hospedagem</p>
+        <p>Passeios • aluguel de barco • hospedagem</p>
         <div><a href={instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a><a href={contactUrl} target="_blank" rel="noreferrer">Contato ↗</a></div>
       </footer>
 
-      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Planejar passeio com a Manoa">
-        <span>Planejar passeio</span><b aria-hidden="true">↗</b>
+      <a className="floating-cta" href={contactUrl} target="_blank" rel="noreferrer" aria-label="Consultar passeio com a Manoa">
+        <span>Consultar passeio</span><b aria-hidden="true">↗</b>
       </a>
     </main>
   );

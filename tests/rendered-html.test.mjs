@@ -23,9 +23,12 @@ test("server-renders the finished Manoa landing page", async () => {
 
   const html = await response.text();
   assert.match(html, /<html[^>]+lang="pt-BR"/i);
-  assert.match(html, /<title>Manoa Tour \| Passeios em Angra dos Reis<\/title>/i);
-  assert.match(html, /Angra fica ainda melhor/);
+  assert.match(html, /<title>Manoa Tour \| Reserve seu passeio em Angra dos Reis<\/title>/i);
+  assert.match(html, /Seu próximo passeio começa/);
   assert.match(html, /Passeios de barco/);
+  assert.match(html, /Consultar disponibilidade/);
+  assert.match(html, /Barco para o seu grupo/);
+  assert.match(html, /Valores e disponibilidade sob consulta/);
   assert.match(html, /Praia Vermelha/);
   assert.match(html, /https:\/\/linkr\.bio\/n2x0k/);
   assert.match(html, /https:\/\/www\.instagram\.com\/manoa\.tour\//);
@@ -48,6 +51,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
     "agua-cristalina.jpg",
     "praia-ilha-grande.jpg",
     "costa-verde.jpg",
+    "og.png",
   ]) {
     await access(new URL(`../public/${asset}`, import.meta.url));
     assert.match(page + layout, new RegExp(asset.replace(".", "\\.")));
