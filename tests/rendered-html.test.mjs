@@ -53,12 +53,15 @@ test("server-renders the finished Manoa landing page", async () => {
 });
 
 test("keeps official Manoa media local and removes disposable preview", async () => {
-  const [page, layout, css, bookingForm, packageJson] = await Promise.all([
+  const [page, layout, css, bookingForm, packageJson, vercelJson, vercelTsconfig, nextConfig] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/BookingForm.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../vercel.json", import.meta.url), "utf8"),
+    readFile(new URL("../tsconfig.vercel.json", import.meta.url), "utf8"),
+    readFile(new URL("../next.config.ts", import.meta.url), "utf8"),
   ]);
 
   for (const asset of [
@@ -77,6 +80,15 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   }
 
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
+  assert.equal(JSON.parse(packageJson).scripts["build:vercel"], "next build");
+  assert.deepEqual(JSON.parse(vercelJson), {
+    $schema: "https://openapi.vercel.sh/vercel.json",
+    framework: "nextjs",
+    buildCommand: "npm run build:vercel",
+  });
+  assert.ok(JSON.parse(vercelTsconfig).exclude.includes("db"));
+  assert.ok(JSON.parse(vercelTsconfig).exclude.includes("worker"));
+  assert.match(nextConfig, /tsconfigPath:\s*"tsconfig\.vercel\.json"/);
   assert.match(layout, /lang="pt-BR"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /family=DM\+Sans:[^"']+family=DM\+Serif\+Display/);
