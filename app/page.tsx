@@ -1,12 +1,8 @@
-const instagramUrl = "https://www.instagram.com/manoa.tour/";
-const contactUrl = "https://linkr.bio/n2x0k";
-const tourReelUrl = "https://www.instagram.com/manoa.tour/reel/DV9y_xxiggt/";
+import BookingForm from "./BookingForm";
 
-const bookingSteps = [
-  { number: "01", title: "Data desejada", text: "Diga quando pretende ir para a equipe consultar a disponibilidade." },
-  { number: "02", title: "Quantidade de pessoas", text: "Informe o tamanho do grupo para receber uma opção compatível." },
-  { number: "03", title: "Tipo de experiência", text: "Passeio compartilhado, privativo ou dicas de onde ficar: conte o que você procura." },
-];
+const instagramUrl = "https://www.instagram.com/manoa.tour/";
+const contactUrl = "https://wa.me/5524992958552";
+const tourReelUrl = "https://www.instagram.com/manoa.tour/reel/DV9y_xxiggt/";
 
 const faqs = [
   {
@@ -210,26 +206,14 @@ export default function Home() {
       <section className="booking-section" id="reserva">
         <div className="booking-copy">
           <p className="eyebrow eyebrow--dark"><span /> Agendamento pelo WhatsApp</p>
-          <h2>Para começar, envie <em>só o essencial.</em></h2>
-          <p>Com três informações, a conversa pelo WhatsApp já começa mais objetiva e a equipe consegue passar os valores e orientar sua escolha.</p>
-          <a className="button button--primary" href={contactUrl} target="_blank" rel="noreferrer">
-            Agendar pelo WhatsApp <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-
-        <div className="booking-steps">
-          {bookingSteps.map((step) => (
-            <article key={step.number}>
-              <span>{step.number}</span>
-              <div><h3>{step.title}</h3><p>{step.text}</p></div>
-            </article>
-          ))}
-          <div className="booking-summary">
-            <span className="summary-mark" aria-hidden="true">M</span>
-            <div><small>Pronto para agendar?</small><strong>Data + pessoas + experiência</strong></div>
-            <a href={contactUrl} target="_blank" rel="noreferrer" aria-label="Abrir WhatsApp do Manoa">↗</a>
+          <h2>Monte a mensagem.<br /><em>O WhatsApp abre pronto.</em></h2>
+          <p>Informe a data, quantas pessoas vão e o tipo de passeio. O site organiza tudo em uma mensagem para o Manoa confirmar valores e disponibilidade.</p>
+          <div className="booking-contact">
+            <small>WhatsApp oficial</small>
+            <strong>+55 24 99295-8552</strong>
           </div>
         </div>
+        <BookingForm />
       </section>
 
       <section className="why-section">

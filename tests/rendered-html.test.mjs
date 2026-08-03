@@ -29,7 +29,11 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Passeio privativo/);
   assert.match(html, /Valores e agendamento/);
   assert.match(html, /direto no WhatsApp/);
-  assert.match(html, /Agendar pelo WhatsApp/);
+  assert.match(html, /O WhatsApp abre pronto/);
+  assert.match(html, /Data desejada/);
+  assert.match(html, /Quantidade de pessoas/);
+  assert.match(html, /Tipo de experiência/);
+  assert.match(html, /Abrir mensagem no WhatsApp/);
   assert.match(html, /Agendar no WhatsApp/);
   assert.match(html, /O Manoa oferece hospedagem\?/);
   assert.match(html, /Por que falar com o Manoa/);
@@ -43,16 +47,17 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Combine diretamente/);
   assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);
   assert.match(html, /Praia Vermelha/);
-  assert.match(html, /https:\/\/linkr\.bio\/n2x0k/);
+  assert.match(html, /https:\/\/wa\.me\/5524992958552/);
   assert.match(html, /https:\/\/www\.instagram\.com\/manoa\.tour\//);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
 
 test("keeps official Manoa media local and removes disposable preview", async () => {
-  const [page, layout, css, packageJson] = await Promise.all([
+  const [page, layout, css, bookingForm, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/BookingForm.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
@@ -74,5 +79,9 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   assert.match(layout, /lang="pt-BR"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(bookingForm, /5524992958552/);
+  assert.match(bookingForm, /encodeURIComponent\(message\)/);
+  assert.match(bookingForm, /Passeio compartilhado/);
+  assert.match(bookingForm, /Passeio privativo/);
   await assert.rejects(access(new URL("../app/_sites-preview", root)));
 });
