@@ -186,6 +186,12 @@ h1 em, h2 em { color: var(--coral); font-weight: 400; font-style: italic; }
 .why-list article > span { padding-top: 3px; font-family: var(--serif); font-size: 12px; font-style: italic; }
 .why-list h3 { margin: 0 0 3px; font-family: var(--serif); font-size: 21px; font-weight: 400; letter-spacing: -.02em; }
 .why-list p { margin: 0; color: #4c6b69; font-size: 12px; line-height: 1.45; }
+.why-amenities { margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(8,46,49,.18); }
+.why-amenities > p { margin: 0 0 14px; }
+.why-amenities__body { display: grid; grid-template-columns: 130px 1fr; gap: 18px; align-items: center; }
+.why-amenities__body img { aspect-ratio: 4 / 3; border-radius: 16px; }
+.why-amenities__body ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.why-amenities__body li { padding: 9px 12px; border: 1px solid rgba(8,46,49,.22); border-radius: 999px; background: rgba(255,255,255,.4); font-size: 8px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 
 .faq-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(50px, 8vw, 130px); background: var(--paper); }
 .faq-title > p:not(.eyebrow) { max-width: 380px; margin: 26px 0 0; color: #657a79; font-size: 14px; line-height: 1.7; }
@@ -293,6 +299,8 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 9px; font
   .why-image { width: min(190px, 58vw); aspect-ratio: 9 / 16; min-height: 0; border-radius: 20px; }
   .why-copy { padding: 4px 2px 24px; }
   .why-copy h2 { font-size: clamp(38px, 11vw, 50px); }
+  .why-amenities__body { grid-template-columns: 1fr; }
+  .why-amenities__body img { aspect-ratio: 16 / 9; }
   .faq-section { gap: 46px; }
   .faq-list summary { grid-template-columns: 30px 1fr auto; gap: 10px; }
   .faq-list details > p { margin-left: 40px; margin-right: 20px; }

@@ -232,6 +232,23 @@ export default function Home() {
             <article><span>02</span><div><h3>Opções para cada grupo</h3><p>Passeio compartilhado ou privativo, conforme o perfil da viagem.</p></div></article>
             <article><span>03</span><div><h3>Informações centralizadas</h3><p>Rota, disponibilidade, valores e agendamento alinhados pelo WhatsApp.</p></div></article>
           </div>
+
+          <div className="why-amenities">
+            <p className="tour-type">O que tem no barco</p>
+            <div className="why-amenities__body">
+              <img src="/barco-comodidades.jpg" alt="Área coberta do barco do Manoa, com coletes salva-vidas, boias e caixa térmica" />
+              <ul aria-label="Itens disponíveis no barco do Manoa">
+                <li>Colete salva-vidas</li>
+                <li>Boias e flutuadores</li>
+                <li>Caixa térmica</li>
+                <li>Pia com água</li>
+                <li>Som Bluetooth</li>
+                <li>Banheiro a bordo</li>
+                <li>Área coberta</li>
+                <li>Até 13 passageiros</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
