@@ -58,11 +58,11 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Experiências náuticas em Angra dos Reis</p>
-          <h1>Explore Angra por uma nova <em>perspectiva.</em></h1>
+          <p className="eyebrow"><span /> Passeios de barco em Angra dos Reis</p>
+          <h1>Angra, vista do <em>mar.</em></h1>
           <p className="hero-lead">
-            Escolha entre passeios compartilhados ou privativos em Angra e Ilha Grande,
-            com atendimento direto para consultar rotas, disponibilidade e valores.
+            Passeios compartilhados ou privativos para viver praias, ilhas e águas cristalinas
+            com atendimento direto do Manoa.
           </p>
           <div className="hero-actions">
             <a className="button button--primary" href="#passeios">
@@ -83,10 +83,10 @@ export default function Home() {
           <img className="hero-photo" src="/barco-manoa.jpg" alt="Barco do Manoa durante passeio em Angra dos Reis" />
           <div className="hero-shade" />
           <div className="booking-card">
-            <p>Encontre a opção ideal para sua viagem</p>
+            <p>Escolha como viver Angra</p>
             <a href="#passeio-compartilhado"><span><b>01</b>Passeio compartilhado</span><i aria-hidden="true">↓</i></a>
             <a href="#passeio-privativo"><span><b>02</b>Passeio privativo</span><i aria-hidden="true">↓</i></a>
-            <a href="#onde-ficar"><span><b>03</b>Indicações de hospedagem</span><i aria-hidden="true">↓</i></a>
+            <a href="#onde-ficar"><span><b>03</b>Dicas de onde ficar</span><i aria-hidden="true">↓</i></a>
             <small>Valores, disponibilidade e reservas pelo WhatsApp.</small>
           </div>
           <div className="location-badge"><span>RJ</span><strong>Angra dos Reis</strong><small>Costa Verde</small></div>
@@ -99,11 +99,25 @@ export default function Home() {
         <a href="#onde-ficar"><span>03</span><strong>Indicações de hospedagem</strong><small>Ver indicações ↓</small></a>
       </section>
 
+      <section className="travel-intro" aria-labelledby="travel-intro-title">
+        <p className="eyebrow eyebrow--dark"><span /> Viva Angra com o Manoa</p>
+        <h2 id="travel-intro-title">Mais que um passeio.<br /><em>Um dia para lembrar.</em></h2>
+        <p>
+          O Manoa ajuda você a escolher a experiência mais adequada para o seu grupo,
+          com informações claras e atendimento direto antes de embarcar.
+        </p>
+        <div className="travel-intro__facts" aria-label="Diferenciais da experiência">
+          <span><b>01</b>Angra e Ilha Grande</span>
+          <span><b>02</b>Compartilhado ou privativo</span>
+          <span><b>03</b>Reserva pelo WhatsApp</span>
+        </div>
+      </section>
+
       <section className="section tours" id="passeios">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow--dark"><span /> Escolha seu passeio</p>
-            <h2>Uma experiência para<br /><em>cada forma de viajar.</em></h2>
+            <p className="eyebrow eyebrow--dark"><span /> Escolha sua experiência</p>
+            <h2>Dois jeitos de viver<br /><em>o melhor de Angra.</em></h2>
           </div>
           <p>
             Compare as opções e escolha a que melhor atende ao perfil do seu grupo.
@@ -177,8 +191,8 @@ export default function Home() {
 
       <section className="destination-section" id="destinos">
         <div className="destination-intro">
-          <p className="eyebrow"><span /> Descubra a Costa Verde</p>
-          <h2>Um destino.<br /><em>Muitas possibilidades.</em></h2>
+          <p className="eyebrow"><span /> Cenários da Costa Verde</p>
+          <h2>Ilhas, praias e um mar<br /><em>que muda o ritmo do dia.</em></h2>
           <p>
             Águas transparentes, ilhas e praias cercadas pela Mata Atlântica compõem
             diferentes possibilidades de rota em Angra e Ilha Grande.
@@ -225,8 +239,8 @@ export default function Home() {
           <span>Takes reais • @manoa.tour</span>
         </a>
         <div className="why-copy">
-          <p className="eyebrow"><span /> Atendimento do Manoa</p>
-          <h2>Planejamento claro.<br /><em>Experiência bem orientada.</em></h2>
+          <p className="eyebrow"><span /> Por que escolher o Manoa</p>
+          <h2>Conhecimento local.<br /><em>Mais tempo para aproveitar.</em></h2>
           <div className="why-list">
             <article><span>01</span><div><h3>Conhecimento local</h3><p>Orientação de quem conhece Angra e a região.</p></div></article>
             <article><span>02</span><div><h3>Opções para cada grupo</h3><p>Passeio compartilhado ou privativo, conforme o perfil da viagem.</p></div></article>
@@ -272,7 +286,7 @@ export default function Home() {
         <div className="cta-photo"><img src="/agua-cristalina.jpg" alt="Água cristalina e embarcações em Angra" /></div>
         <div className="cta-card">
           <p className="eyebrow eyebrow--dark"><span /> Planeje sua experiência em Angra</p>
-          <h2>Escolha a data.<br /><em>O Manoa orienta o próximo passo.</em></h2>
+          <h2>Seu próximo dia inesquecível<br /><em>pode começar agora.</em></h2>
           <p>Consulte opções de passeio, valores e disponibilidade diretamente pelo WhatsApp.</p>
           <div className="cta-actions">
             <a className="button button--dark" href={contactUrl} target="_blank" rel="noreferrer">

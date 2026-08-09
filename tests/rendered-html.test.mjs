@@ -24,7 +24,9 @@ test("server-renders the finished Manoa landing page", async () => {
   const html = await response.text();
   assert.match(html, /<html[^>]+lang="pt-BR"/i);
   assert.match(html, /<title>Manoa Tour \| Reserve seu passeio em Angra dos Reis<\/title>/i);
-  assert.match(html, /Explore Angra por uma nova/);
+  assert.match(html, /Angra, vista do/);
+  assert.match(html, /Mais que um passeio/);
+  assert.match(html, /Um dia para lembrar/);
   assert.match(html, /Passeio compartilhado/);
   assert.match(html, /Passeio privativo/);
   assert.match(html, /Consulta e agendamento/);
@@ -36,10 +38,11 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Consultar pelo WhatsApp/);
   assert.match(html, /Falar com o Manoa pelo WhatsApp/);
   assert.match(html, /O Manoa oferece hospedagem\?/);
-  assert.match(html, /Atendimento do Manoa/);
+  assert.match(html, /Por que escolher o Manoa/);
   assert.match(html, /manoa-tour-reel\.mp4/);
   assert.match(html, /Takes reais/);
-  assert.match(html, /Planejamento claro/);
+  assert.match(html, /Conhecimento local/);
+  assert.match(html, /O que tem no barco/);
   assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
   assert.match(html, /não oferece hospedagem/);
   assert.match(html, /Solicitar indicações/);
@@ -72,6 +75,7 @@ test("keeps official Manoa media local and removes disposable preview", async ()
     "agua-cristalina.jpg",
     "praia-ilha-grande.jpg",
     "costa-verde.jpg",
+    "barco-comodidades.jpg",
     "manoa-tour-reel.mp4",
     "og.png",
   ]) {
@@ -99,9 +103,13 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.doesNotMatch(css, /#ff875e|#f6c757|rgba\(255,135,94/);
   assert.match(css, /h1, h2\s*\{[^}]*font-weight:\s*400[^}]*letter-spacing:\s*-\.045em/s);
   assert.match(css, /\.hero\s*\{[^}]*min-height:\s*680px[^}]*height:\s*min\(86svh,\s*820px\)/s);
+  assert.match(css, /\.hero\s*\{[^}]*position:\s*relative[^}]*min-height:\s*700px[^}]*height:\s*min\(92svh,\s*880px\)[^}]*display:\s*block/s);
+  assert.match(css, /\.travel-intro\s*\{[^}]*max-width:\s*1040px[^}]*text-align:\s*center/s);
+  assert.match(css, /\.sales-strip\s*\{[^}]*margin:\s*-34px\s+auto\s+0[^}]*box-shadow/s);
   assert.match(css, /\.booking-section\s*\{[^}]*padding:\s*clamp\(72px,\s*7vw,\s*110px\)[^}]*gap:\s*clamp\(40px,\s*6vw,\s*90px\)/s);
   assert.match(css, /\.booking-copy h2\s*\{[^}]*font-size:\s*clamp\(44px,\s*4\.5vw,\s*72px\)/s);
   assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*250px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
+  assert.match(css, /\.why-amenities__body\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*minmax\(250px,\s*360px\)\s+1fr/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(css, /\.stay-card__steps strong\s*\{[^}]*font-size:\s*clamp\(21px,\s*1\.6vw,\s*25px\)/s);
