@@ -77,6 +77,9 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
     "manoa-profile.jpg",
     "angra-baia.jpg",
     "barco-manoa.jpg",
+    "barco-manoa-lateral.png",
+    "barco-manoa-baia.png",
+    "passeio-costao.png",
     "praia-vermelha.jpg",
     "agua-cristalina.jpg",
     "praia-ilha-grande.jpg",
@@ -91,7 +94,9 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   for (const usedAsset of [
     "manoa-profile.jpg",
     "angra-baia.jpg",
-    "barco-manoa.jpg",
+    "barco-manoa-lateral.png",
+    "barco-manoa-baia.png",
+    "passeio-costao.png",
     "agua-cristalina.jpg",
     "praia-ilha-grande.jpg",
     "costa-verde.jpg",
@@ -99,7 +104,7 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
     "manoa-tour-reel.mp4",
     "og.png",
   ]) {
-    assert.match(page + layout, new RegExp(usedAsset.replace(".", "\\.")));
+    assert.match(page + layout + css, new RegExp(usedAsset.replace(".", "\\.")));
   }
 
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
@@ -152,8 +157,11 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(bookingForm, /\\u\{1F4C5\}\\uFE0F/);
   assert.match(bookingForm, /api\.whatsapp\.com\/send/);
   assert.match(page, /className="hero-media"/);
-  assert.match(page, /src="\/barco-manoa\.jpg"/);
+  assert.match(page, /src="\/barco-manoa-lateral\.png"/);
   assert.match(page, /src="\/barco-comodidades\.jpg"[^>]+Área interna do barco/);
+  assert.match(page, /className="testimonials"/);
+  assert.match(page, /@betevcota/);
+  assert.match(page, /@scottyarella/);
   assert.match(css, /\.tour-card\s*\{[^}]*flex-direction:\s*column[^}]*border-radius:\s*24px/s);
   await assert.rejects(access(new URL("../app/_sites-preview", root)));
 });

@@ -105,10 +105,10 @@ export default function Home() {
 
         <div className="hero-media">
           <img
-            src="/barco-manoa.jpg"
-            width="640"
-            height="1136"
-            alt="Barco do Manoa em águas claras de Angra dos Reis"
+            src="/barco-manoa-lateral.png"
+            width="870"
+            height="843"
+            alt="Barco do Manoa navegando em águas claras de Angra dos Reis"
           />
           <div className="hero-location"><small>Destino</small><strong>Angra dos Reis</strong><span>Costa Verde • RJ</span></div>
         </div>
@@ -206,7 +206,7 @@ export default function Home() {
             <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Praia Vermelha</strong><small>Ilha Grande</small></span></figcaption>
           </figure>
           <figure className="destination destination--lower">
-            <img src="/barco-manoa.jpg" width="640" height="1136" alt="Barco do Manoa navegando em Angra dos Reis" />
+            <img src="/barco-manoa-baia.png" width="874" height="872" alt="Barco do Manoa na baía de Angra dos Reis" />
             <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Angra pelo mar</strong><small>Passeio com o Manoa</small></span></figcaption>
           </figure>
         </div>
@@ -250,6 +250,37 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="testimonials" id="avaliacoes" aria-labelledby="testimonials-title">
+        <div className="testimonials-heading">
+          <p className="eyebrow"><span /> Experiências reais</p>
+          <h2 id="testimonials-title">Quem conhece,<br /><em>quer voltar.</em></h2>
+          <p>Comentários públicos compartilhados por clientes no Instagram do Manoa.</p>
+        </div>
+        <div className="testimonial-grid">
+          <article>
+            <span aria-hidden="true">“</span>
+            <blockquote>Passeio perfeito, @manoa.tour é o melhor passeio de Angra! Satisfação do início ao fim. Obrigada pelo dia incrível.</blockquote>
+            <div className="testimonial-author"><strong>@milatalyuli</strong><small>Comentário no Instagram</small></div>
+          </article>
+          <article>
+            <span aria-hidden="true">“</span>
+            <blockquote>Amamos o passeio, Sr. Silas! Nos sentimos muito bem acolhidos pelo senhor e pelo seu filho. Paraíso é subestimação para estas praias lindas.</blockquote>
+            <div className="testimonial-author"><strong>@cuorejewels</strong><small>Comentário no Instagram</small></div>
+          </article>
+          <article>
+            <span aria-hidden="true">“</span>
+            <blockquote>Adoramos os passeios, foram super agradáveis. O barco é excelente e confortável, nos sentimos completamente seguros com o piloto.</blockquote>
+            <div className="testimonial-author"><strong>@betevcota</strong><small>Comentário no Instagram</small></div>
+          </article>
+          <article>
+            <span aria-hidden="true">“</span>
+            <blockquote>Só penso em voltar. Indico demais seus passeios, não só pela recepção no seu barco como pela segurança na pilotagem.</blockquote>
+            <div className="testimonial-author"><strong>@scottyarella</strong><small>Comentário no Instagram</small></div>
+          </article>
+        </div>
+        <a className="text-link testimonials-link" href={instagramUrl} target="_blank" rel="noreferrer"><FaInstagram aria-hidden="true" /> Ver o Instagram do Manoa <span aria-hidden="true">↗</span></a>
       </section>
 
       <section className="booking" id="reserva">
