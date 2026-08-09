@@ -47,6 +47,10 @@ test("server-renders the blue-and-white Manoa landing page", async () => {
   assert.match(html, /não oferece hospedagem/);
   assert.match(html, /Pedir indicações/);
   assert.match(html, /Ilha Grande/);
+  assert.match(html, /Costa Verde/);
+  assert.match(html, /Baía de Angra/);
+  assert.match(html, /Praia Vermelha/);
+  assert.match(html, /Angra pelo mar/);
   assert.match(html, /https:\/\/wa\.me\/5524992958552\?text=/);
   assert.match(html, /https:\/\/www\.instagram\.com\/manoa\.tour\//);
   assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
@@ -118,13 +122,15 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(css, /\.hero-media\s*\{[^}]*border-radius:\s*280px\s+280px\s+8px\s+8px/s);
   assert.match(css, /\.trust-strip\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*1fr\)/s);
   assert.match(css, /\.tour-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
-  assert.match(css, /\.destination-gallery\s*\{[^}]*grid-template-columns:\s*1\.2fr\s+\.8fr/s);
+  assert.match(css, /\.destination-gallery\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/s);
+  assert.match(css, /\.destination figcaption\s*\{[^}]*min-height:\s*72px[^}]*display:\s*flex/s);
   assert.match(css, /\.experience-reel a\s*\{[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.boat-section\s*\{[^}]*grid-template-columns:\s*1\.08fr\s+\.92fr/s);
   assert.match(css, /\.booking\s*\{[^}]*grid-template-columns:\s*\.8fr\s+1\.2fr/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.hero\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*54px[^}]*background:\s*#25d366/s);
-  assert.match(page, /import\s*\{\s*FaInstagram,\s*FaWhatsapp\s*\}\s*from\s*["']react-icons\/fa["']/);
+  assert.match(page, /import\s*\{\s*FaInstagram,\s*FaMapMarkerAlt,\s*FaWhatsapp\s*\}\s*from\s*["']react-icons\/fa["']/);
+  assert.match(page, /<FaMapMarkerAlt\s+aria-hidden="true"\s*\/>/);
   assert.match(page, /<FaWhatsapp\s+aria-hidden="true"\s+focusable="false"\s*\/>/);
   assert.match(page, /encodeURIComponent\(message\)/);
   assert.match(page, /Tenho interesse no passeio compartilhado/);

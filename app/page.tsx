@@ -1,5 +1,5 @@
 import BookingForm from "./BookingForm";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 
 const instagramUrl = "https://www.instagram.com/manoa.tour/";
 const tourReelUrl = "https://www.instagram.com/manoa.tour/reel/DV9y_xxiggt/";
@@ -168,26 +168,39 @@ export default function Home() {
 
       <section className="destinations" id="destinos">
         <div className="destination-heading">
-          <p className="eyebrow eyebrow--light"><span /> Cenários da Costa Verde</p>
+          <p className="eyebrow"><span /> Cenários da Costa Verde</p>
           <h2>Um passeio.<br /><em>Muitos tons de azul.</em></h2>
-          <p>As possibilidades de rota passam por praias, ilhas e águas transparentes de Angra e Ilha Grande.</p>
-          <a className="button button--white" href={routeContactUrl} target="_blank" rel="noreferrer">Conversar sobre a rota <span aria-hidden="true">↗</span></a>
+          <p>Praias, ilhas e águas transparentes entre Angra e Ilha Grande.</p>
         </div>
 
         <div className="destination-gallery">
-          <figure className="destination destination--large">
+          <figure className="destination">
             <img src="/praia-ilha-grande.jpg" width="1440" height="1920" alt="Praia cercada pela Mata Atlântica em Ilha Grande" />
-            <figcaption><span>01</span><strong>Ilha Grande</strong><small>Praias e Mata Atlântica</small></figcaption>
+            <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Ilha Grande</strong><small>Praias e Mata Atlântica</small></span></figcaption>
           </figure>
           <figure className="destination">
             <img src="/costa-verde.jpg" width="640" height="1136" alt="Águas azuis e natureza na Costa Verde" />
-            <figcaption><span>02</span><strong>Costa Verde</strong><small>Mar e natureza</small></figcaption>
+            <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Costa Verde</strong><small>Mar e natureza</small></span></figcaption>
           </figure>
           <figure className="destination">
             <img src="/angra-baia.jpg" width="720" height="1280" alt="Baía e embarcações em Angra dos Reis" />
-            <figcaption><span>03</span><strong>Angra dos Reis</strong><small>Ilhas e baías</small></figcaption>
+            <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Baía de Angra</strong><small>Ilhas e embarcações</small></span></figcaption>
+          </figure>
+          <figure className="destination">
+            <img src="/agua-cristalina.jpg" width="640" height="1136" alt="Águas cristalinas entre as ilhas de Angra" />
+            <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Praias e ilhas</strong><small>Águas cristalinas</small></span></figcaption>
+          </figure>
+          <figure className="destination destination--upper">
+            <img src="/praia-vermelha.jpg" width="640" height="1136" alt="Praia Vermelha, na Ilha Grande" />
+            <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Praia Vermelha</strong><small>Ilha Grande</small></span></figcaption>
+          </figure>
+          <figure className="destination destination--lower">
+            <img src="/barco-manoa.jpg" width="640" height="1136" alt="Barco do Manoa navegando em Angra dos Reis" />
+            <figcaption><FaMapMarkerAlt aria-hidden="true" /><span><strong>Angra pelo mar</strong><small>Passeio com o Manoa</small></span></figcaption>
           </figure>
         </div>
+
+        <a className="button button--blue destination-cta" href={routeContactUrl} target="_blank" rel="noreferrer">Conversar sobre a rota <span aria-hidden="true">↗</span></a>
       </section>
 
       <section className="experience" id="experiencia">
