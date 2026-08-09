@@ -163,12 +163,17 @@ export default function Home() {
         </div>
 
         <aside className="stay-note" id="onde-ficar">
-          <div>
+          <div className="stay-note__visual" aria-hidden="true">
+            <FaMapMarkerAlt />
+            <span>Angra dos Reis</span>
+            <small>Orientação local</small>
+          </div>
+          <div className="stay-note__content">
             <p className="eyebrow"><span /> Parceiros locais</p>
             <h3>Precisa de orientação para escolher onde ficar?</h3>
+            <p>O Manoa não oferece hospedagem, mas pode indicar regiões e parceiros conforme o perfil da sua viagem. A contratação é feita diretamente com a hospedagem escolhida.</p>
           </div>
-          <p>O Manoa não oferece hospedagem, mas pode indicar regiões e parceiros conforme o perfil da sua viagem. A contratação é feita diretamente com a hospedagem escolhida.</p>
-          <a className="text-link" href={stayContactUrl} target="_blank" rel="noreferrer">Pedir indicações <span aria-hidden="true">↗</span></a>
+          <a className="button button--blue" href={stayContactUrl} target="_blank" rel="noreferrer">Pedir indicações <span aria-hidden="true">↗</span></a>
         </aside>
       </section>
 
@@ -227,24 +232,23 @@ export default function Home() {
             <article><span>02</span><div><h3>Opções para cada grupo</h3><p>Passeio compartilhado ou privativo, conforme o perfil da viagem.</p></div></article>
             <article><span>03</span><div><h3>Tudo alinhado antes</h3><p>Rota, valores, disponibilidade e agendamento pelo WhatsApp.</p></div></article>
           </div>
-        </div>
-      </section>
 
-      <section className="boat-section" aria-labelledby="boat-title">
-        <div className="boat-media">
-          <img src="/barco-comodidades.jpg" width="1600" height="1180" alt="Área coberta e estrutura interna do barco do Manoa" />
-          <span>Estrutura para até 13 passageiros</span>
-        </div>
-        <div className="boat-copy">
-          <p className="eyebrow eyebrow--light"><span /> Estrutura a bordo</p>
-          <h2 id="boat-title">Conforto em cada etapa<br /><em>do passeio.</em></h2>
-          <p>Uma estrutura preparada para tornar a experiência mais prática, segura e agradável.</p>
-          <ul aria-label="Itens disponíveis no barco do Manoa">
-            <li><span>01</span>Colete salva-vidas</li><li><span>02</span>Boias e flutuadores</li>
-            <li><span>03</span>Caixa térmica</li><li><span>04</span>Pia com água</li>
-            <li><span>05</span>Som Bluetooth</li><li><span>06</span>Banheiro a bordo</li>
-            <li><span>07</span>Área coberta</li><li><span>08</span>Até 13 passageiros</li>
-          </ul>
+          <div className="onboard-card">
+            <div className="onboard-media">
+              <img src="/barco-comodidades.jpg" width="1600" height="1200" alt="Área coberta e estrutura interna do barco do Manoa" />
+              <span>Estrutura para até 13 passageiros</span>
+            </div>
+            <div className="onboard-content">
+              <p className="card-kicker">Estrutura a bordo</p>
+              <h3>Conforto para aproveitar o dia.</h3>
+              <ul aria-label="Itens disponíveis no barco do Manoa">
+                <li>Colete salva-vidas</li><li>Boias e flutuadores</li>
+                <li>Caixa térmica</li><li>Pia com água</li>
+                <li>Som Bluetooth</li><li>Banheiro a bordo</li>
+                <li>Área coberta</li><li>Até 13 passageiros</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

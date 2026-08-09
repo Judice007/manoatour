@@ -108,10 +108,15 @@ h1 em, h2 em { color: var(--blue-bright); font-weight: 500; }
 .tour-card--blue li { border-color: rgba(255,255,255,.17); background: rgba(255,255,255,.07); }
 .tour-card li::before { content: ""; position: absolute; top: 50%; left: 12px; width: 5px; height: 5px; border-radius: 50%; background: var(--sky); transform: translateY(-50%); }
 .tour-card .button { margin-top: auto; }
-.stay-note { max-width: 1360px; display: grid; grid-template-columns: 1.05fr 1.2fr auto; gap: clamp(24px, 4vw, 64px); align-items: center; margin: 22px auto 0; padding: clamp(28px, 3.4vw, 44px); border: 1px solid rgba(13,101,148,.2); background: var(--ice); }
-.stay-note .eyebrow { margin-bottom: 14px; }
-.stay-note h3 { font-size: clamp(30px, 3vw, 46px); line-height: 1; }
-.stay-note > p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.stay-note { max-width: 1180px; display: grid; grid-template-columns: 230px 1fr auto; gap: clamp(24px, 3vw, 42px); align-items: center; margin: 28px auto 0; padding: 14px 28px 14px 14px; overflow: hidden; border: 1px solid rgba(13,101,148,.14); border-radius: 22px; background: var(--white); box-shadow: 0 18px 48px rgba(6,31,51,.07); }
+.stay-note__visual { min-height: 158px; display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; border-radius: 15px; background: linear-gradient(0deg, rgba(6,31,51,.8), rgba(6,31,51,.08)), url("/costa-verde.jpg") center 56% / cover; color: var(--white); }
+.stay-note__visual svg { margin-bottom: auto; color: var(--sky); font-size: 22px; }
+.stay-note__visual span { font-family: var(--serif); font-size: 24px; font-weight: 600; }
+.stay-note__visual small { margin-top: 3px; font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .72; }
+.stay-note__content { padding: 10px 0; }
+.stay-note .eyebrow { margin-bottom: 10px; }
+.stay-note h3 { font-size: clamp(30px, 2.7vw, 42px); line-height: 1; }
+.stay-note__content > p:last-child { max-width: 680px; margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 
 .destinations { padding: clamp(76px, 7vw, 108px) clamp(24px, 6vw, 104px); background: var(--ice); }
 .destination-heading { max-width: 820px; margin: 0 auto 46px; text-align: center; }
@@ -132,9 +137,10 @@ h1 em, h2 em { color: var(--blue-bright); font-weight: 500; }
 .destination figcaption small { color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 .destination-cta { margin: 36px auto 0; }
 
-.experience { display: grid; grid-template-columns: minmax(250px, 330px) 1fr; gap: clamp(44px, 7vw, 108px); align-items: center; padding: clamp(76px, 7.5vw, 114px) clamp(24px, 7vw, 118px); background: var(--ice); }
+.experience { display: grid; grid-template-columns: minmax(250px, 310px) 1fr; gap: clamp(42px, 6vw, 88px); align-items: start; padding: clamp(72px, 6.5vw, 96px) clamp(24px, 7vw, 118px); background: var(--ice); }
 .experience-reel { justify-self: center; width: min(100%, 310px); }
-.experience-reel a { position: relative; display: block; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 180px 180px 6px 6px; box-shadow: 0 30px 70px rgba(6,31,51,.18); }
+.experience-reel a { position: sticky; top: 28px; display: block; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 26px; box-shadow: 0 30px 70px rgba(6,31,51,.18); }
+.experience-reel video { object-position: center 66%; transform: scale(1.22); }
 .experience-reel a::after { content: ""; position: absolute; inset: 58% 0 0; background: linear-gradient(transparent, rgba(6,31,51,.75)); }
 .experience-reel span { position: absolute; z-index: 2; right: 20px; bottom: 22px; left: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 12px; border: 1px solid rgba(255,255,255,.44); border-radius: 999px; color: var(--white); font-size: 8px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
 .experience-copy { max-width: 920px; }
@@ -144,20 +150,17 @@ h1 em, h2 em { color: var(--blue-bright); font-weight: 500; }
 .experience-points article > span { color: var(--blue); font-family: var(--serif); font-size: 13px; font-style: italic; }
 .experience-points h3 { font-size: 25px; letter-spacing: -.02em; }
 .experience-points p { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
-
-.boat-section { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 640px; background: var(--navy-soft); color: var(--white); }
-.boat-media { position: relative; min-height: 640px; overflow: hidden; }
-.boat-media::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(6,31,51,.78)); }
-.boat-media > span { position: absolute; z-index: 2; left: 38px; bottom: 32px; color: var(--white); font-size: 9px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
-.boat-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(50px, 6vw, 86px); }
-.boat-copy h2 { font-size: clamp(54px, 5.2vw, 82px); line-height: .94; }
-.boat-copy h2 em { color: var(--sky); }
-.boat-copy > p:not(.eyebrow) { max-width: 560px; margin: 24px 0 32px; color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.7; }
-.boat-copy ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.2); list-style: none; }
-.boat-copy li { display: grid; grid-template-columns: 30px 1fr; align-items: center; min-height: 58px; padding: 12px 10px 12px 0; border-bottom: 1px solid rgba(255,255,255,.2); font-size: 11px; font-weight: 700; }
-.boat-copy li:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.2); }
-.boat-copy li:nth-child(even) { padding-left: 17px; }
-.boat-copy li span { color: var(--sky); font-family: var(--serif); font-size: 11px; font-style: italic; }
+.onboard-card { display: grid; grid-template-columns: minmax(190px, .72fr) 1.28fr; margin-top: 32px; overflow: hidden; border-radius: 20px; background: var(--navy-soft); color: var(--white); box-shadow: 0 22px 52px rgba(6,31,51,.14); }
+.onboard-media { position: relative; min-height: 275px; overflow: hidden; }
+.onboard-media::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(transparent, rgba(6,31,51,.8)); }
+.onboard-media img { object-position: center 52%; }
+.onboard-media > span { position: absolute; z-index: 2; right: 18px; bottom: 17px; left: 18px; color: var(--white); font-size: 8px; font-weight: 800; letter-spacing: .1em; line-height: 1.45; text-transform: uppercase; }
+.onboard-content { display: flex; flex-direction: column; justify-content: center; padding: 30px; }
+.onboard-content .card-kicker { color: var(--sky); }
+.onboard-content h3 { max-width: 470px; font-size: clamp(32px, 3vw, 44px); line-height: .96; }
+.onboard-content ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; margin: 22px 0 0; padding: 0; border-top: 1px solid rgba(255,255,255,.16); list-style: none; }
+.onboard-content li { position: relative; min-height: 38px; display: flex; align-items: center; padding: 8px 4px 8px 16px; border-bottom: 1px solid rgba(255,255,255,.16); font-size: 10px; font-weight: 700; }
+.onboard-content li::before { content: ""; position: absolute; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--sky); }
 
 .booking { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 6vw, 96px); align-items: center; padding: clamp(80px, 7.5vw, 118px) clamp(24px, 6vw, 104px); background: var(--white); }
 .booking-copy { max-width: 650px; }
@@ -216,10 +219,10 @@ footer > div { justify-self: end; display: flex; gap: 22px; font-size: 10px; fon
   .trust-strip > div:nth-last-child(-n + 2) { border-bottom: 0; }
   .tour-card__image { height: 250px; min-height: 0; }
   .tour-card__content { min-height: 0; }
-  .stay-note { grid-template-columns: 1fr 1fr; }
-  .stay-note .text-link { grid-column: 1 / -1; }
+  .stay-note { grid-template-columns: 190px 1fr; padding-right: 20px; }
+  .stay-note .button { grid-column: 2; }
   .destination-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .boat-copy { padding: 64px 42px; }
+  .onboard-card { grid-template-columns: 180px 1fr; }
 }
 
 @media (max-width: 760px) {
@@ -249,8 +252,10 @@ footer > div { justify-self: end; display: flex; gap: 22px; font-size: 10px; fon
   .tour-card__content { min-height: 0; padding: 32px 22px 36px; }
   .tour-card h3 { font-size: 44px; }
   .tour-card .button { width: 100%; }
-  .stay-note { grid-template-columns: 1fr; padding: 30px 22px; }
-  .stay-note .text-link { grid-column: auto; }
+  .stay-note { grid-template-columns: 1fr; gap: 18px; padding: 12px; }
+  .stay-note__visual { min-height: 140px; }
+  .stay-note__content { padding: 8px 8px 0; }
+  .stay-note .button { grid-column: auto; width: 100%; }
   .destinations { padding: 68px 16px; }
   .destination-heading { margin-bottom: 34px; }
   .destination-heading h2 { font-size: clamp(50px, 15vw, 68px); }
@@ -260,18 +265,14 @@ footer > div { justify-self: end; display: flex; gap: 22px; font-size: 10px; fon
   .destination figcaption strong { font-size: 15px; }
   .destination figcaption small { font-size: 7px; letter-spacing: .05em; }
   .destination-cta { margin-top: 28px; }
-  .experience { grid-template-columns: 1fr; gap: 38px; padding: 72px 20px; }
+  .experience { grid-template-columns: 1fr; gap: 38px; padding: 68px 20px; }
   .experience-reel { width: min(210px, 62vw); }
+  .experience-reel a { position: relative; top: auto; border-radius: 22px; }
   .experience-copy h2 { font-size: clamp(48px, 14vw, 64px); }
   .experience-points article { grid-template-columns: 34px 1fr; }
-  .boat-section { grid-template-columns: 1fr; min-height: 0; }
-  .boat-media { min-height: 430px; }
-  .boat-media > span { left: 20px; bottom: 20px; }
-  .boat-copy { padding: 62px 20px; }
-  .boat-copy h2 { font-size: clamp(48px, 14vw, 66px); }
-  .boat-copy ul { grid-template-columns: 1fr; }
-  .boat-copy li:nth-child(odd) { border-right: 0; }
-  .boat-copy li:nth-child(even) { padding-left: 0; }
+  .onboard-card { grid-template-columns: 1fr; margin-top: 28px; }
+  .onboard-media { min-height: 210px; }
+  .onboard-content { padding: 28px 22px 30px; }
   .booking { grid-template-columns: 1fr; gap: 38px; padding: 72px 18px; }
   .booking-copy h2 { font-size: clamp(48px, 14vw, 65px); }
   .booking-form { padding: 26px 20px; }

@@ -46,7 +46,7 @@ test("server-renders the blue-and-white Manoa landing page", async () => {
   assert.match(html, /Takes reais/);
   assert.match(html, /Conhecimento local/);
   assert.match(html, /Estrutura a bordo/);
-  assert.match(html, /Conforto em cada etapa/);
+  assert.match(html, /Conforto para aproveitar o dia/);
   assert.match(html, /não oferece hospedagem/);
   assert.match(html, /Pedir indicações/);
   assert.match(html, /Ilha Grande/);
@@ -133,7 +133,9 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(css, /\.destination-gallery\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/s);
   assert.match(css, /\.destination figcaption\s*\{[^}]*min-height:\s*72px[^}]*display:\s*flex/s);
   assert.match(css, /\.experience-reel a\s*\{[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
-  assert.match(css, /\.boat-section\s*\{[^}]*grid-template-columns:\s*1\.08fr\s+\.92fr/s);
+  assert.match(css, /\.onboard-card\s*\{[^}]*grid-template-columns:\s*minmax\(190px,\s*\.72fr\)\s+1\.28fr/s);
+  assert.doesNotMatch(page, /className="boat-section"/);
+  assert.match(page, /className="stay-note__visual"/);
   assert.match(css, /\.booking\s*\{[^}]*grid-template-columns:\s*\.8fr\s+1\.2fr/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.hero\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*54px[^}]*background:\s*#25d366/s);
