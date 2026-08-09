@@ -24,7 +24,8 @@ test("server-renders the finished Manoa landing page", async () => {
   const html = await response.text();
   assert.match(html, /<html[^>]+lang="pt-BR"/i);
   assert.match(html, /<title>Manoa Tour \| Reserve seu passeio em Angra dos Reis<\/title>/i);
-  assert.match(html, /Angra, vista do/);
+  assert.match(html, /O mar/);
+  assert.match(html, /muda tudo/);
   assert.match(html, /Mais que um passeio/);
   assert.match(html, /Um dia para lembrar/);
   assert.match(html, /Passeio compartilhado/);
@@ -43,6 +44,7 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /Takes reais/);
   assert.match(html, /Conhecimento local/);
   assert.match(html, /O que tem no barco/);
+  assert.match(html, /Conforto para aproveitar/);
   assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
   assert.match(html, /não oferece hospedagem/);
   assert.match(html, /Solicitar indicações/);
@@ -110,6 +112,8 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.match(css, /\.booking-copy h2\s*\{[^}]*font-size:\s*clamp\(44px,\s*4\.5vw,\s*72px\)/s);
   assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*250px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.why-amenities__body\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*minmax\(250px,\s*360px\)\s+1fr/s);
+  assert.match(css, /\.boat-section\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*1\.08fr\s+\.92fr/s);
+  assert.match(css, /\.hero-copy\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*minmax\(280px,\s*430px\)\s+1fr/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
   assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
   assert.match(css, /\.stay-card__steps strong\s*\{[^}]*font-size:\s*clamp\(21px,\s*1\.6vw,\s*25px\)/s);

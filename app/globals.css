@@ -431,3 +431,106 @@ body { background: #f7f3eb; }
   .why-amenities__body ul { grid-template-columns: 1fr; }
   .cta-section { min-height: 720px; }
 }
+
+/* Sophisticated campaign layer: cleaner, more cinematic, closer to the travel reference. */
+:root {
+  --campaign-blue: #0f5d70;
+  --campaign-sky: #dceff0;
+  --campaign-cream: #f7f2e8;
+}
+
+.site-header { height: 94px; }
+.desktop-nav { gap: 36px; }
+.header-cta { padding: 14px 20px 14px 24px; background: rgba(255,255,255,.96); color: var(--ink); }
+
+.hero { min-height: 740px; height: min(94svh, 920px); }
+.hero-copy { width: 100%; height: 100%; display: grid; grid-template-columns: minmax(280px, 430px) 1fr; grid-template-rows: auto auto auto; align-content: end; column-gap: clamp(36px, 7vw, 120px); padding: 150px clamp(24px, 6vw, 96px) 72px; }
+.hero-copy .eyebrow { grid-column: 1; grid-row: 1; margin-bottom: 24px; }
+.hero h1 { grid-column: 1 / -1; grid-row: 2; max-width: none; margin: 0 0 46px; font-size: clamp(88px, 11vw, 174px); line-height: .78; letter-spacing: -.065em; }
+.hero h1 em { display: block; padding-left: clamp(40px, 12vw, 190px); color: #f3c977; }
+.hero-lead { grid-column: 1; grid-row: 3; max-width: 430px; margin: 0; }
+.hero-actions { grid-column: 2; grid-row: 3; align-self: end; justify-self: end; margin: 0; }
+.hero-proof, .booking-card { display: none; }
+.hero-photo { object-position: center 58%; }
+.hero-shade { background: linear-gradient(90deg, rgba(4,35,38,.78), rgba(4,35,38,.18) 68%, rgba(4,35,38,.3)), linear-gradient(0deg, rgba(4,35,38,.72), transparent 60%); }
+.location-badge { top: 126px; }
+
+.sales-strip { margin-top: 0; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--line); }
+.sales-strip a { min-height: 112px; }
+.sales-strip strong { font-family: var(--serif); font-size: 20px; font-weight: 400; text-transform: none; letter-spacing: -.01em; }
+
+.travel-intro { padding-top: clamp(110px, 12vw, 178px); }
+.travel-intro > p:not(.eyebrow) { font-size: 17px; }
+
+.tour-card { overflow: hidden; border-radius: 4px; box-shadow: none; }
+.tour-card__image { height: clamp(420px, 43vw, 590px); }
+.tour-card__image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,35,38,.34), transparent 45%); }
+.tour-card__label, .tour-card__index { z-index: 2; }
+.tour-card__content { min-height: 430px; }
+.stay-card { border-radius: 4px; }
+
+.destination-section { min-height: 820px; background: linear-gradient(125deg, #082e31 0%, #0c4b53 100%); }
+.destination { border-radius: 2px; }
+
+.booking-section { background: var(--campaign-cream); }
+.booking-form { border-radius: 4px; }
+
+.why-section { grid-template-columns: minmax(270px, 360px) 1fr; background: var(--campaign-sky); }
+.why-image { max-width: 340px; border-radius: 180px 180px 4px 4px; }
+.why-copy { align-self: center; }
+.why-list article { padding: 22px 0; }
+
+.boat-section { display: grid; grid-template-columns: 1.08fr .92fr; min-height: 720px; background: #fffdf8; }
+.boat-section__media { position: relative; min-height: 720px; overflow: hidden; }
+.boat-section__media::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(4,35,38,.72)); }
+.boat-section__media img { transition: transform 1s ease; }
+.boat-section:hover .boat-section__media img { transform: scale(1.025); }
+.boat-section__media > span { position: absolute; z-index: 2; left: 42px; bottom: 38px; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.boat-section__copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(58px, 8vw, 120px); }
+.boat-section__copy h2 { margin: 0; font-family: var(--serif); font-size: clamp(56px, 5.4vw, 84px); font-weight: 400; line-height: .94; letter-spacing: -.05em; }
+.boat-section__copy h2 em { color: var(--coral); }
+.boat-section__copy > p:not(.eyebrow) { max-width: 590px; margin: 25px 0 34px; color: #58706e; font-size: 15px; line-height: 1.75; }
+.boat-section__copy ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.boat-section__copy li { display: grid; grid-template-columns: 32px 1fr; align-items: center; min-height: 62px; padding: 13px 10px 13px 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 11px; font-weight: 700; }
+.boat-section__copy li:nth-child(odd) { border-right: 1px solid var(--line); }
+.boat-section__copy li:nth-child(even) { padding-left: 18px; }
+.boat-section__copy li span { color: #2a837d; font-family: var(--serif); font-size: 12px; font-style: italic; font-weight: 400; }
+
+.cta-section { min-height: 820px; place-items: center end; padding-inline: clamp(24px, 7vw, 110px); }
+.cta-card { width: min(720px, 60vw); margin: 0; padding: clamp(52px, 6vw, 84px); border-radius: 4px; text-align: left; }
+.cta-card .eyebrow, .cta-actions { justify-content: flex-start; }
+.cta-card > p:not(.eyebrow) { margin-left: 0; }
+
+@media (max-width: 1050px) {
+  .hero-copy { grid-template-columns: minmax(250px, 360px) 1fr; }
+  .hero h1 { font-size: clamp(82px, 12vw, 132px); }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .why-section { grid-template-columns: minmax(230px, 280px) 1fr; }
+  .boat-section { grid-template-columns: 1fr 1fr; }
+  .boat-section__copy { padding: 64px 40px; }
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: 790px; }
+  .hero-copy { min-height: 790px; display: flex; flex-direction: column; justify-content: flex-end; padding: 124px 20px 62px; }
+  .hero-copy .eyebrow { margin-bottom: 20px; }
+  .hero h1 { margin-bottom: 28px; font-size: clamp(68px, 22vw, 94px); line-height: .82; }
+  .hero h1 em { padding-left: 0; }
+  .hero-lead { margin-bottom: 28px; }
+  .hero-actions { width: 100%; }
+  .sales-strip { width: 100%; margin: 0; }
+  .sales-strip a { min-height: 86px; }
+  .destination-section { min-height: 0; }
+  .why-section { grid-template-columns: 1fr; }
+  .why-image { max-width: none; border-radius: 120px 120px 4px 4px; }
+  .boat-section { grid-template-columns: 1fr; min-height: 0; }
+  .boat-section__media { min-height: 430px; }
+  .boat-section__media > span { left: 20px; bottom: 20px; }
+  .boat-section__copy { padding: 72px 20px; }
+  .boat-section__copy h2 { font-size: clamp(50px, 14vw, 68px); }
+  .boat-section__copy ul { grid-template-columns: 1fr; }
+  .boat-section__copy li:nth-child(odd) { border-right: 0; }
+  .boat-section__copy li:nth-child(even) { padding-left: 0; }
+  .cta-section { place-items: center; padding-inline: 18px; }
+  .cta-card { width: 100%; }
+}
