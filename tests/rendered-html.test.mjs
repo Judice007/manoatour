@@ -160,6 +160,10 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(page, /src="\/barco-manoa-lateral\.png"/);
   assert.match(page, /src="\/barco-comodidades\.jpg"[^>]+Área interna do barco/);
   assert.match(page, /className="testimonials"/);
+  assert.match(page, /className="testimonial-marquee"/);
+  assert.match(css, /@keyframes\s+testimonial-scroll/);
+  assert.match(page, /@geovani\.geo\.395/);
+  assert.match(page, /@talita_t_silva/);
   assert.match(page, /@betevcota/);
   assert.match(page, /@scottyarella/);
   assert.match(css, /\.tour-card\s*\{[^}]*flex-direction:\s*column[^}]*border-radius:\s*24px/s);

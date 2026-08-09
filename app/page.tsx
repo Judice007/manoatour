@@ -52,6 +52,49 @@ const faqs = [
   },
 ];
 
+const testimonials = [
+  {
+    quote: "Passeio perfeito, @manoa.tour é o melhor passeio de Angra! Satisfação do início ao fim. Obrigada pelo dia incrível.",
+    author: "@milatalyuli",
+  },
+  {
+    quote: "Amamos o passeio, Sr. Silas! Nos sentimos muito bem acolhidos pelo senhor e pelo seu filho. Paraíso é subestimação para estas praias lindas.",
+    author: "@cuorejewels",
+  },
+  {
+    quote: "Adoramos os passeios, foram super agradáveis. O barco é excelente e confortável, nos sentimos completamente seguros com o piloto.",
+    author: "@betevcota",
+  },
+  {
+    quote: "Só penso em voltar. Indico demais seus passeios, não só pela recepção no seu barco como pela segurança na pilotagem.",
+    author: "@scottyarella",
+  },
+  {
+    quote: "Amamos o passeio e o barco. Fomos muito bem recebidos também.",
+    author: "@pereirameri",
+  },
+  {
+    quote: "Que passeio top! Obrigada pelo dia incrível que nos proporcionou.",
+    author: "@katiaa_asjlva",
+  },
+  {
+    quote: "Foi lindo. Adoramos o passeio.",
+    author: "@daniellarribeirobr",
+  },
+  {
+    quote: "Saudades deste lugar. Louco para voltar novamente, principalmente com o Silas, muito atencioso e prestativo.",
+    author: "@geovani.geo.395",
+  },
+  {
+    quote: "Ameiiii esse passeio. Top demais. Vocês são 10.",
+    author: "@talita_t_silva",
+  },
+  {
+    quote: "Foi maravilhoso! Obrigada a vocês, foi incrível.",
+    author: "@nayracmiranda",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -258,27 +301,20 @@ export default function Home() {
           <h2 id="testimonials-title">Quem conhece,<br /><em>quer voltar.</em></h2>
           <p>Comentários públicos compartilhados por clientes no Instagram do Manoa.</p>
         </div>
-        <div className="testimonial-grid">
-          <article>
-            <span aria-hidden="true">“</span>
-            <blockquote>Passeio perfeito, @manoa.tour é o melhor passeio de Angra! Satisfação do início ao fim. Obrigada pelo dia incrível.</blockquote>
-            <div className="testimonial-author"><strong>@milatalyuli</strong><small>Comentário no Instagram</small></div>
-          </article>
-          <article>
-            <span aria-hidden="true">“</span>
-            <blockquote>Amamos o passeio, Sr. Silas! Nos sentimos muito bem acolhidos pelo senhor e pelo seu filho. Paraíso é subestimação para estas praias lindas.</blockquote>
-            <div className="testimonial-author"><strong>@cuorejewels</strong><small>Comentário no Instagram</small></div>
-          </article>
-          <article>
-            <span aria-hidden="true">“</span>
-            <blockquote>Adoramos os passeios, foram super agradáveis. O barco é excelente e confortável, nos sentimos completamente seguros com o piloto.</blockquote>
-            <div className="testimonial-author"><strong>@betevcota</strong><small>Comentário no Instagram</small></div>
-          </article>
-          <article>
-            <span aria-hidden="true">“</span>
-            <blockquote>Só penso em voltar. Indico demais seus passeios, não só pela recepção no seu barco como pela segurança na pilotagem.</blockquote>
-            <div className="testimonial-author"><strong>@scottyarella</strong><small>Comentário no Instagram</small></div>
-          </article>
+        <div className="testimonial-marquee" aria-label="Comentários de clientes do Manoa">
+          <div className="testimonial-track">
+            {[false, true].map((duplicate) => (
+              <div className="testimonial-group" aria-hidden={duplicate || undefined} key={duplicate ? "duplicate" : "original"}>
+                {testimonials.map((testimonial) => (
+                  <article key={`${duplicate ? "copy" : "review"}-${testimonial.author}`}>
+                    <span aria-hidden="true">“</span>
+                    <blockquote>{testimonial.quote}</blockquote>
+                    <div className="testimonial-author"><strong>{testimonial.author}</strong><small>Comentário no Instagram</small></div>
+                  </article>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
         <a className="text-link testimonials-link" href={instagramUrl} target="_blank" rel="noreferrer"><FaInstagram aria-hidden="true" /> Ver o Instagram do Manoa <span aria-hidden="true">↗</span></a>
       </section>
