@@ -114,7 +114,7 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(css, /--white:\s*#ffffff/);
   assert.doesNotMatch(css, /--coral|--sun|#ef7652|#f1dfc5|#ff875e|#f6c757/i);
   assert.match(css, /h1, h2, h3\s*\{[^}]*letter-spacing:\s*-\.045em/s);
-  assert.match(css, /\.hero\s*\{[^}]*min-height:\s*790px[^}]*grid-template-columns:/s);
+  assert.match(css, /\.hero\s*\{[^}]*min-height:\s*730px[^}]*grid-template-columns:/s);
   assert.match(css, /\.hero-media\s*\{[^}]*border-radius:\s*280px\s+280px\s+8px\s+8px/s);
   assert.match(css, /\.trust-strip\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*1fr\)/s);
   assert.match(css, /\.tour-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
