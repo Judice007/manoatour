@@ -151,5 +151,7 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(bookingForm, /api\.whatsapp\.com\/send/);
   assert.match(page, /className="hero-media"/);
   assert.match(page, /src="\/barco-manoa\.jpg"/);
+  assert.match(page, /src="\/barco-comodidades\.jpg"[^>]+Área interna do barco/);
+  assert.match(css, /\.tour-card\s*\{[^}]*flex-direction:\s*column[^}]*border-radius:\s*24px/s);
   await assert.rejects(access(new URL("../app/_sites-preview", root)));
 });

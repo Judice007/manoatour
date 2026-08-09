@@ -147,7 +147,7 @@ export default function Home() {
 
           <article className="tour-card tour-card--blue" id="passeio-privativo">
             <div className="tour-card__image tour-card__image--boat">
-              <img src="/barco-manoa.jpg" width="640" height="1136" alt="Barco do Manoa durante passeio privativo" />
+              <img src="/barco-comodidades.jpg" width="1600" height="1200" alt="Área interna do barco utilizado nos passeios do Manoa" />
               <span>02</span>
             </div>
             <div className="tour-card__content">
