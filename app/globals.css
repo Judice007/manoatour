@@ -196,7 +196,7 @@ h1 em, h2 em { color: var(--blue-bright); font-weight: 500; }
 .booking-copy > p:not(.eyebrow) { margin: 27px 0; color: var(--muted); font-size: 15px; line-height: 1.72; }
 .booking-contact { display: flex; flex-direction: column; padding-top: 24px; border-top: 1px solid var(--line); }
 .booking-contact small { color: var(--blue); font-size: 9px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
-.booking-contact strong { margin-top: 7px; font-family: var(--serif); font-size: 25px; font-weight: 500; }
+.booking-contact strong { margin-top: 8px; font-family: var(--sans); font-size: 19px; font-weight: 650; font-variant-numeric: lining-nums tabular-nums; letter-spacing: .015em; line-height: 1.2; }
 .booking-form { max-width: 780px; padding: clamp(28px, 4vw, 50px); border: 1px solid rgba(13,101,148,.2); border-radius: 6px; background: var(--ice); box-shadow: 0 28px 70px rgba(6,31,51,.11); }
 .booking-form__intro { display: flex; flex-direction: column; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .booking-form__intro span, .booking-form__preview > span { color: var(--blue); font-size: 8px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }

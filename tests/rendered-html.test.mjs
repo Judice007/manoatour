@@ -142,6 +142,7 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.doesNotMatch(page, /className="boat-section"/);
   assert.match(page, /className="stay-note__visual"/);
   assert.match(css, /\.booking\s*\{[^}]*grid-template-columns:\s*\.8fr\s+1\.2fr/s);
+  assert.match(css, /\.booking-contact strong\s*\{[^}]*font-family:\s*var\(--sans\)[^}]*font-variant-numeric:\s*lining-nums tabular-nums/s);
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.hero\s*\{[^}]*grid-template-columns:\s*1fr/s);
   assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*54px[^}]*background:\s*#25d366/s);
   assert.match(page, /import\s*\{\s*FaInstagram,\s*FaMapMarkerAlt,\s*FaWhatsapp\s*\}\s*from\s*["']react-icons\/fa["']/);
