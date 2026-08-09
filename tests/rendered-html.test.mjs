@@ -28,6 +28,9 @@ test("server-renders the blue-and-white Manoa landing page", async () => {
   assert.match(html, /começa no mar/);
   assert.match(html, /Passeio compartilhado/);
   assert.match(html, /Passeio privativo/);
+  assert.match(html, /Aproximadamente 6 horas/);
+  assert.match(html, /Embarque no Clube ARMC/);
+  assert.match(html, /O embarque normalmente acontece no Clube ARMC/);
   assert.match(html, /Consultar passeio compartilhado/);
   assert.match(html, /Consultar passeio privativo/);
   assert.match(html, /Muitos tons de azul/);
@@ -120,7 +123,7 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(css, /h1, h2, h3\s*\{[^}]*letter-spacing:\s*-\.045em/s);
   assert.match(css, /\.hero\s*\{[^}]*min-height:\s*730px[^}]*grid-template-columns:/s);
   assert.match(css, /\.hero-media\s*\{[^}]*border-radius:\s*280px\s+280px\s+8px\s+8px/s);
-  assert.match(css, /\.trust-strip\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*1fr\)/s);
+  assert.match(css, /\.trust-strip\s*\{[^}]*grid-template-columns:\s*repeat\(4,\s*1fr\)/s);
   assert.match(css, /\.tour-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
   assert.match(css, /\.destination-gallery\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*minmax\(0,\s*1fr\)\)/s);
   assert.match(css, /\.destination figcaption\s*\{[^}]*min-height:\s*72px[^}]*display:\s*flex/s);

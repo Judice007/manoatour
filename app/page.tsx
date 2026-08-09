@@ -31,6 +31,11 @@ const faqs = [
       "O agendamento é feito diretamente pelo WhatsApp. Informe a data desejada, o número de pessoas e a preferência entre passeio compartilhado ou privativo.",
   },
   {
+    question: "Qual é a duração e o local de embarque?",
+    answer:
+      "O passeio tem duração aproximada de 6 horas. O embarque normalmente acontece no Clube ARMC; o ponto é confirmado com o Manoa antes da saída.",
+  },
+  {
     question: "Os valores aparecem no site?",
     answer:
       "Não. Valores, vagas e disponibilidade variam conforme a data e a experiência escolhida; a confirmação é feita diretamente pelo WhatsApp.",
@@ -110,9 +115,10 @@ export default function Home() {
       </section>
 
       <section className="trust-strip" aria-label="Diferenciais do Manoa">
-        <div><span>01</span><strong>Atendimento direto</strong><small>Converse com o Manoa pelo WhatsApp.</small></div>
-        <div><span>02</span><strong>Escolha orientada</strong><small>Compartilhado ou privativo para o seu grupo.</small></div>
-        <div><span>03</span><strong>Estrutura a bordo</strong><small>Conforto para até 13 passageiros.</small></div>
+        <div><span>01</span><strong>Aproximadamente 6 horas</strong><small>Duração estimada do passeio.</small></div>
+        <div><span>02</span><strong>Embarque no Clube ARMC</strong><small>Local normalmente utilizado.</small></div>
+        <div><span>03</span><strong>Escolha orientada</strong><small>Compartilhado ou privativo para o seu grupo.</small></div>
+        <div><span>04</span><strong>Atendimento direto</strong><small>Valores e agendamento pelo WhatsApp.</small></div>
       </section>
 
       <section className="section tours" id="passeios">
