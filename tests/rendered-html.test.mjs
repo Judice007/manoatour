@@ -116,7 +116,8 @@ test("keeps official media, contextual WhatsApp messages, and responsive styling
   assert.match(layout, /metadataBase:\s*new URL\("https:\/\/manoatour\.vercel\.app"\)/);
   assert.match(layout, /canonical:\s*"\/"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.match(css, /family=Cormorant\+Garamond:[^"']+family=Manrope/);
+  assert.match(layout, /fonts\.googleapis\.com\/css2\?family=Cormorant\+Garamond:[^"']+family=Manrope/);
+  assert.doesNotMatch(css, /fonts\.googleapis\.com/);
   assert.match(css, /--serif:\s*"Cormorant Garamond"/);
   assert.match(css, /--sans:\s*"Manrope"/);
   assert.match(css, /--navy:\s*#061f33/);
