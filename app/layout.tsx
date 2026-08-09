@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://manoatour.vercel.app"),
   title: "Manoa Tour | Reserve seu passeio em Angra dos Reis",
   description: "Passeios compartilhados ou privativos em Angra dos Reis, com valores e agendamento direto pelo WhatsApp.",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: "/manoa-profile.jpg",
     apple: "/manoa-profile.jpg",
@@ -11,6 +19,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Manoa Tour | Passeios em Angra dos Reis",
     description: "Passeios compartilhados ou privativos, com valores e agendamento direto pelo WhatsApp.",
+    url: "/",
+    siteName: "Manoa Tour",
+    locale: "pt_BR",
     type: "website",
     images: [{ url: "/og.png", width: 1536, height: 1024, alt: "Manoa Tour — passeios em Angra dos Reis" }],
   },

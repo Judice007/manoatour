@@ -75,7 +75,7 @@ export default function BookingForm() {
         <p>{message}</p>
       </div>
 
-      <button className="button button--primary booking-form__submit" type="submit">
+      <button className="button button--blue booking-form__submit" type="submit">
         Consultar pelo WhatsApp <span aria-hidden="true">↗</span>
       </button>
       <small className="booking-form__note">Antes do envio, você poderá revisar e editar a mensagem no WhatsApp.</small>

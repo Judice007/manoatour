@@ -16,7 +16,7 @@ async function render() {
   );
 }
 
-test("server-renders the finished Manoa landing page", async () => {
+test("server-renders the blue-and-white Manoa landing page", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -24,15 +24,14 @@ test("server-renders the finished Manoa landing page", async () => {
   const html = await response.text();
   assert.match(html, /<html[^>]+lang="pt-BR"/i);
   assert.match(html, /<title>Manoa Tour \| Reserve seu passeio em Angra dos Reis<\/title>/i);
-  assert.match(html, /O mar/);
-  assert.match(html, /muda tudo/);
-  assert.match(html, /Mais que um passeio/);
-  assert.match(html, /Um dia para lembrar/);
+  assert.match(html, /Seu dia em Angra/);
+  assert.match(html, /começa no mar/);
   assert.match(html, /Passeio compartilhado/);
   assert.match(html, /Passeio privativo/);
-  assert.match(html, /Consulta e agendamento/);
-  assert.match(html, /confirmados com o Manoa pelo WhatsApp/);
-  assert.match(html, /Envie sua solicitação/);
+  assert.match(html, /Consultar passeio compartilhado/);
+  assert.match(html, /Consultar passeio privativo/);
+  assert.match(html, /Muitos tons de azul/);
+  assert.match(html, /O Manoa cuida do restante/);
   assert.match(html, /Data desejada/);
   assert.match(html, /Quantidade de pessoas/);
   assert.match(html, /Tipo de experiência/);
@@ -43,21 +42,19 @@ test("server-renders the finished Manoa landing page", async () => {
   assert.match(html, /manoa-tour-reel\.mp4/);
   assert.match(html, /Takes reais/);
   assert.match(html, /Conhecimento local/);
-  assert.match(html, /O que tem no barco/);
-  assert.match(html, /Conforto para aproveitar/);
-  assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
+  assert.match(html, /Estrutura a bordo/);
+  assert.match(html, /Conforto em cada etapa/);
   assert.match(html, /não oferece hospedagem/);
-  assert.match(html, /Solicitar indicações/);
-  assert.match(html, /Receba orientações/);
-  assert.match(html, /Contrate diretamente/);
-  assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);
-  assert.match(html, /Praia Vermelha/);
-  assert.match(html, /https:\/\/wa\.me\/5524992958552/);
+  assert.match(html, /Pedir indicações/);
+  assert.match(html, /Ilha Grande/);
+  assert.match(html, /https:\/\/wa\.me\/5524992958552\?text=/);
   assert.match(html, /https:\/\/www\.instagram\.com\/manoa\.tour\//);
+  assert.doesNotMatch(html, /\b(?:A|a|da|na|pela) Manoa\b/);
+  assert.doesNotMatch(html, /Aluguel de barco|Hospedagem em Angra/);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
 
-test("keeps official Manoa media local and removes disposable preview", async () => {
+test("keeps official media, contextual WhatsApp messages, and responsive styling", async () => {
   const [page, layout, css, bookingForm, packageJson, vercelJson, vercelTsconfig, nextConfig] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
@@ -82,7 +79,20 @@ test("keeps official Manoa media local and removes disposable preview", async ()
     "og.png",
   ]) {
     await access(new URL(`../public/${asset}`, import.meta.url));
-    assert.match(page + layout, new RegExp(asset.replace(".", "\\.")));
+  }
+
+  for (const usedAsset of [
+    "manoa-profile.jpg",
+    "angra-baia.jpg",
+    "barco-manoa.jpg",
+    "agua-cristalina.jpg",
+    "praia-ilha-grande.jpg",
+    "costa-verde.jpg",
+    "barco-comodidades.jpg",
+    "manoa-tour-reel.mp4",
+    "og.png",
+  ]) {
+    assert.match(page + layout, new RegExp(usedAsset.replace(".", "\\.")));
   }
 
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
@@ -96,41 +106,36 @@ test("keeps official Manoa media local and removes disposable preview", async ()
   assert.ok(JSON.parse(vercelTsconfig).exclude.includes("worker"));
   assert.match(nextConfig, /tsconfigPath:\s*"tsconfig\.vercel\.json"/);
   assert.match(layout, /lang="pt-BR"/);
+  assert.match(layout, /metadataBase:\s*new URL\("https:\/\/manoatour\.vercel\.app"\)/);
+  assert.match(layout, /canonical:\s*"\/"/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.match(css, /family=DM\+Sans:[^"']+family=DM\+Serif\+Display/);
-  assert.match(css, /--serif:\s*"DM Serif Display"/);
-  assert.match(css, /--sans:\s*"DM Sans"/);
-  assert.match(css, /--coral:\s*#ef7652/);
-  assert.match(css, /--sun:\s*#f1dfc5/);
-  assert.doesNotMatch(css, /#ff875e|#f6c757|rgba\(255,135,94/);
-  assert.match(css, /h1, h2\s*\{[^}]*font-weight:\s*400[^}]*letter-spacing:\s*-\.045em/s);
-  assert.match(css, /\.hero\s*\{[^}]*min-height:\s*680px[^}]*height:\s*min\(86svh,\s*820px\)/s);
-  assert.match(css, /\.hero\s*\{[^}]*position:\s*relative[^}]*min-height:\s*700px[^}]*height:\s*min\(92svh,\s*880px\)[^}]*display:\s*block/s);
-  assert.match(css, /\.travel-intro\s*\{[^}]*max-width:\s*1040px[^}]*text-align:\s*center/s);
-  assert.match(css, /\.sales-strip\s*\{[^}]*margin:\s*-34px\s+auto\s+0[^}]*box-shadow/s);
-  assert.match(css, /\.booking-section\s*\{[^}]*padding:\s*clamp\(72px,\s*7vw,\s*110px\)[^}]*gap:\s*clamp\(40px,\s*6vw,\s*90px\)/s);
-  assert.match(css, /\.booking-copy h2\s*\{[^}]*font-size:\s*clamp\(44px,\s*4\.5vw,\s*72px\)/s);
-  assert.match(css, /\.why-image\s*\{[^}]*max-width:\s*250px[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
-  assert.match(css, /\.why-amenities__body\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*minmax\(250px,\s*360px\)\s+1fr/s);
-  assert.match(css, /\.boat-section\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*1\.08fr\s+\.92fr/s);
-  assert.match(css, /\.hero-copy\s*\{[^}]*display:\s*grid[^}]*grid-template-columns:\s*minmax\(280px,\s*430px\)\s+1fr/s);
-  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.why-image\s*\{[^}]*width:\s*min\(190px,\s*58vw\)[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
-  assert.match(css, /\.stay-card__heading \.tour-type\s*\{[^}]*font-size:\s*clamp\(11px,\s*\.9vw,\s*13px\)/s);
-  assert.match(css, /\.stay-card__steps strong\s*\{[^}]*font-size:\s*clamp\(21px,\s*1\.6vw,\s*25px\)/s);
-  assert.match(css, /\.stay-card__steps small\s*\{[^}]*font-size:\s*13px[^}]*font-weight:\s*500/s);
-  assert.match(css, /\.destination-collage\s*\{[^}]*min-height:\s*0[^}]*height:\s*clamp\(400px,\s*56vh,\s*480px\)[^}]*display:\s*grid/s);
-  assert.match(css, /@media\s*\(min-width:\s*1051px\)\s*and\s*\(max-height:\s*760px\)/);
-  assert.match(css, /\.destination--one\s*\{[^}]*grid-row:\s*1\s*\/\s*-1/s);
-  assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*56px[^}]*background:\s*#25d366/s);
-  assert.match(page, /import\s*\{\s*FaWhatsapp\s*\}\s*from\s*["']react-icons\/fa["']/);
+  assert.match(css, /--navy:\s*#061f33/);
+  assert.match(css, /--blue:\s*#0d6594/);
+  assert.match(css, /--white:\s*#ffffff/);
+  assert.doesNotMatch(css, /--coral|--sun|#ef7652|#f1dfc5|#ff875e|#f6c757/i);
+  assert.match(css, /h1, h2, h3\s*\{[^}]*letter-spacing:\s*-\.045em/s);
+  assert.match(css, /\.hero\s*\{[^}]*min-height:\s*790px[^}]*grid-template-columns:/s);
+  assert.match(css, /\.hero-media\s*\{[^}]*border-radius:\s*280px\s+280px\s+8px\s+8px/s);
+  assert.match(css, /\.trust-strip\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*1fr\)/s);
+  assert.match(css, /\.tour-grid\s*\{[^}]*grid-template-columns:\s*repeat\(2,/s);
+  assert.match(css, /\.destination-gallery\s*\{[^}]*grid-template-columns:\s*1\.2fr\s+\.8fr/s);
+  assert.match(css, /\.experience-reel a\s*\{[^}]*aspect-ratio:\s*9\s*\/\s*16/s);
+  assert.match(css, /\.boat-section\s*\{[^}]*grid-template-columns:\s*1\.08fr\s+\.92fr/s);
+  assert.match(css, /\.booking\s*\{[^}]*grid-template-columns:\s*\.8fr\s+1\.2fr/s);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*\.hero\s*\{[^}]*grid-template-columns:\s*1fr/s);
+  assert.match(css, /\.floating-cta\s*\{[^}]*position:\s*fixed[^}]*width:\s*54px[^}]*background:\s*#25d366/s);
+  assert.match(page, /import\s*\{\s*FaInstagram,\s*FaWhatsapp\s*\}\s*from\s*["']react-icons\/fa["']/);
   assert.match(page, /<FaWhatsapp\s+aria-hidden="true"\s+focusable="false"\s*\/>/);
+  assert.match(page, /encodeURIComponent\(message\)/);
+  assert.match(page, /Tenho interesse no passeio compartilhado/);
+  assert.match(page, /Tenho interesse em um passeio privativo/);
+  assert.match(page, /orientações de regiões e parceiros para hospedagem/);
   assert.match(bookingForm, /5524992958552/);
   assert.match(bookingForm, /new URLSearchParams/);
   assert.match(bookingForm, /message\.normalize\("NFC"\)/);
   assert.match(bookingForm, /\\u\{1F4C5\}\\uFE0F/);
   assert.match(bookingForm, /api\.whatsapp\.com\/send/);
-  assert.match(bookingForm, /Passeio compartilhado/);
-  assert.match(bookingForm, /Passeio privativo/);
-  assert.match(page, /className="hero-photo"\s+src="\/barco-manoa\.jpg"/);
+  assert.match(page, /className="hero-media"/);
+  assert.match(page, /src="\/barco-manoa\.jpg"/);
   await assert.rejects(access(new URL("../app/_sites-preview", root)));
 });
