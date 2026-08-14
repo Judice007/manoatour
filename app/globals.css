@@ -35,16 +35,24 @@ button, input, select, summary { font: inherit; }
 .desktop-nav a { position: relative; padding: 9px 0; }
 .desktop-nav a::after { content: ""; position: absolute; bottom: 3px; left: 0; width: 0; height: 1px; background: var(--sky); transition: width .25s ease; }
 .desktop-nav a:hover::after, .desktop-nav a:focus-visible::after { width: 100%; }
-.header-cta { justify-self: end; display: inline-flex; align-items: center; gap: 9px; padding: 13px 18px; border: 1px solid rgba(255,255,255,.42); border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+.header-actions { justify-self: end; display: inline-flex; align-items: center; gap: 22px; }
+.header-cta { display: inline-flex; align-items: center; gap: 9px; padding: 13px 18px; border: 1px solid rgba(255,255,255,.42); border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
 .header-cta:hover, .header-cta:focus-visible { background: var(--white); color: var(--navy); }
 .header-cta svg { font-size: 16px; }
+.lang-switch { display: flex; align-items: center; font-size: 10px; font-weight: 800; letter-spacing: .1em; }
+.lang-switch a { opacity: .55; transition: opacity .2s ease; }
+.lang-switch a:hover, .lang-switch a:focus-visible, .lang-switch a.is-active { opacity: 1; }
+.lang-switch span[aria-hidden] { opacity: .4; }
 .mobile-menu { display: none; justify-self: end; position: relative; }
 .mobile-menu summary { width: 42px; height: 42px; display: grid; place-content: center; gap: 6px; border: 1px solid rgba(255,255,255,.34); border-radius: 50%; cursor: pointer; list-style: none; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
 .mobile-menu summary span { width: 16px; height: 1px; background: var(--white); }
-.mobile-menu nav { position: absolute; top: 50px; right: 0; width: 235px; display: grid; padding: 12px; border: 1px solid rgba(255,255,255,.2); border-radius: 16px; background: rgba(6,31,51,.97); box-shadow: 0 20px 50px rgba(0,0,0,.2); }
+.mobile-menu nav { position: absolute; top: 50px; right: 0; width: 268px; display: grid; padding: 12px; border: 1px solid rgba(255,255,255,.2); border-radius: 16px; background: rgba(6,31,51,.97); box-shadow: 0 20px 50px rgba(0,0,0,.2); }
 .mobile-menu nav a { padding: 13px 12px; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 12px; font-weight: 700; }
 .mobile-menu nav a:last-child { border-bottom: 0; color: var(--sky); }
+.mobile-lang-switch { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.1); }
+.mobile-lang-switch a { padding: 6px 10px; border: 1px solid rgba(255,255,255,.24); border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: .04em; opacity: .65; white-space: nowrap; }
+.mobile-lang-switch a.is-active { opacity: 1; border-color: var(--sky); color: var(--sky); }
 
 .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 24px; color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .eyebrow > span { width: 32px; height: 1px; background: currentColor; }
@@ -259,7 +267,7 @@ footer > div { justify-self: end; display: flex; gap: 22px; font-size: 10px; fon
   .brand img { width: 39px; height: 39px; }
   .brand strong { font-size: 18px; }
   .brand small { font-size: 8px; }
-  .header-cta { display: none; }
+  .header-actions { display: none; }
   .mobile-menu { display: block; }
   .hero { min-height: 0; grid-template-columns: 1fr; gap: 38px; padding: 108px 20px 44px; }
   .hero h1 { font-size: clamp(66px, 20vw, 90px); line-height: .86; }
