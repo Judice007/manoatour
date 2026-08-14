@@ -47,13 +47,18 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
         <div className="header-actions">
           <nav className="lang-switch" aria-label={t.nav.langSwitchAria}>
-            {locales.map((locale, index) => (
-              <span key={locale.lang}>
-                {index > 0 && <span aria-hidden="true"> · </span>}
-                <a href={locale.path} className={locale.lang === lang ? "is-active" : undefined} aria-current={locale.lang === lang ? "page" : undefined}>
-                  {locale.code}
-                </a>
-              </span>
+            <span className="lang-switch__label">{t.nav.langLabel}</span>
+            {locales.map((locale) => (
+              <a
+                key={locale.lang}
+                href={locale.path}
+                className={locale.lang === lang ? "is-active" : undefined}
+                aria-current={locale.lang === lang ? "page" : undefined}
+                aria-label={locale.autonym}
+                title={locale.autonym}
+              >
+                <span aria-hidden="true">{locale.flag}</span>
+              </a>
             ))}
           </nav>
 
@@ -70,9 +75,10 @@ export default function HomePage({ lang }: { lang: Lang }) {
             <a href="#experiencia">{t.nav.experience}</a>
             <a href="#reserva">{t.nav.booking}</a>
             <div className="mobile-lang-switch" aria-label={t.nav.langSwitchAria}>
+              <span className="mobile-lang-switch__label">{t.nav.langLabel}</span>
               {locales.map((locale) => (
                 <a key={locale.lang} href={locale.path} className={locale.lang === lang ? "is-active" : undefined} aria-current={locale.lang === lang ? "page" : undefined}>
-                  {locale.autonym}
+                  <span aria-hidden="true">{locale.flag}</span> {locale.autonym}
                 </a>
               ))}
             </div>

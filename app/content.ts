@@ -1,9 +1,9 @@
 export type Lang = "pt" | "en" | "es";
 
-export const locales: { lang: Lang; path: string; code: string; autonym: string; ogLocale: string; htmlLang: string }[] = [
-  { lang: "pt", path: "/", code: "PT", autonym: "Português", ogLocale: "pt_BR", htmlLang: "pt-BR" },
-  { lang: "en", path: "/en", code: "EN", autonym: "English", ogLocale: "en_US", htmlLang: "en" },
-  { lang: "es", path: "/es", code: "ES", autonym: "Español", ogLocale: "es_419", htmlLang: "es" },
+export const locales: { lang: Lang; path: string; code: string; autonym: string; flag: string; ogLocale: string; htmlLang: string }[] = [
+  { lang: "pt", path: "/", code: "PT", autonym: "Português", flag: "🇧🇷", ogLocale: "pt_BR", htmlLang: "pt-BR" },
+  { lang: "en", path: "/en", code: "EN", autonym: "English", flag: "🇺🇸", ogLocale: "en_US", htmlLang: "en" },
+  { lang: "es", path: "/es", code: "ES", autonym: "Español", flag: "🇪🇸", ogLocale: "es_419", htmlLang: "es" },
 ];
 
 const pt = {
@@ -28,6 +28,7 @@ const pt = {
     mobileNavAria: "Navegação móvel",
     openMenuAria: "Abrir menu",
     langSwitchAria: "Idioma do site",
+    langLabel: "Idioma",
   },
   hero: {
     eyebrow: "Passeios em Angra dos Reis",
@@ -229,6 +230,7 @@ const en: typeof pt = {
     mobileNavAria: "Mobile navigation",
     openMenuAria: "Open menu",
     langSwitchAria: "Site language",
+    langLabel: "Language",
   },
   hero: {
     eyebrow: "Tours in Angra dos Reis",
@@ -430,11 +432,12 @@ const es: typeof pt = {
     mobileNavAria: "Navegación móvil",
     openMenuAria: "Abrir menú",
     langSwitchAria: "Idioma del sitio",
+    langLabel: "Idioma",
   },
   hero: {
     eyebrow: "Paseos en Angra dos Reis",
     titleLine1: "Tu día en Angra ",
-    titleEm: "empieza en el mar.",
+    titleEm: "nace en el mar.",
     lead: "Paseos compartidos o privados para conocer islas, playas y aguas cristalinas con orientación directa de Manoa.",
     ctaPrimary: "Conocer los paseos",
     ctaSecondary: "Consultar disponibilidad",
